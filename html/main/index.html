@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/jquery-3.3.1.min.js"></script>
+		
+		<style>
+			#headersection {
+				height: 60px;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="headersection"></div>
+
+
+
+
+		<script>
+			$.get("../part/top.html", function(data) {
+				$("#headersection").html(data);
+			})
+		
+		</script>
+	</body>
+</html>
