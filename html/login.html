@@ -1,63 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>炼智网-注册登录</title>
-    <!-- 图标 -->
-    <link rel="shortcut icon" href="../img/part/favicon.ico">
-    <link rel="Bookmark" href="../img/part/favicon.ico">
-    <!-- 基础引入jquery，其他页面与js一一对应 -->
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../js/part/Login&Register.js"></script>
-    <!-- normalize.css初始化默认样式,style.css是网页主题样式，里面有网页统一风格的样式，其他页面一一对应样式 -->
-    <link type="text/css" rel="stylesheet" href="../css/part/normalize.css">
-    <link type="text/css" rel="stylesheet" href="../css/part/style.css">
-    <link type="text/css" rel="stylesheet" href="../css/part/Login&Register.css">
-
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>登录</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/login/login.js"></script>
+<script type="text/javascript" src="../js/login/gVerify.js"></script>
+<script type="text/javascript" src="../layui-v2.4.5/layui/layui.all.js"></script>
+<link href="../layui-v2.4.5/layui/css/layui.css" rel="stylesheet" type="text/css" />
+<link href="../css/login/login.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-    <div id="logo">
-        <img src="../resource/picture/logo.png" alt="达乎论坛">
-        <p>炼智系统</p>
+<h1>欢迎登录<sup>1.0</sup></h1>
+
+<div class="login" style="margin-top:50px;">
+    
+    <div class="header">
+        <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">快速登录</a>
+			<a class="switch_btn" id="switch_login" href="javascript:void(0);" tabindex="8">快速注册</a><div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 64px; left: 0px;"></div>
+        </div>
+    </div>    
+  
+    
+    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 300px;">    
+
+            <!--登录-->
+            <div class="web_login" id="web_login">
+               
+               
+               <div class="login-box">
+    
+            
+			<div class="login_form">
+				<div name="loginform" id="login_form" class="loginForm"><input type="hidden" name="did" value="0"/>
+               <input type="hidden" name="to" value="log"/>
+                <div class="uinArea" id="uinArea">
+                <label class="input-tips" for="u">帐号：</label>
+                <div class="inputOuter" id="uArea">
+                    
+                    <input type="text" id="u" name="username" class="inputstyle"/>
+                </div>
+                </div>
+                <div class="pwdArea" id="pwdArea">
+               <label class="input-tips" for="p">密码：</label> 
+               <div class="inputOuter" id="pArea">
+                    
+                    <input type="password" id="p" name="p" class="inputstyle"/>
+                </div>
+                </div>
+               
+               
+               <div class="validatecode" id="validatecode">
+               <label class="input-tips" for="code_input">验证码：</label> 
+               <div class="inputOuter" id="codeArea">
+                    <input type="text" id="code_input" name="code_input" class="inputstyleval"/>
+                    <div id="v_container" style="width: 100px;height: 38px; float: right;"></div>
+                </div>
+                </div>
+                
+                <div style="padding-left:50px;margin-top:20px;"><input type="button" value="登 录" style="width:150px;" id="login_btn" class="button_blue"/></div>
+              </div>
+           </div>
+           
+            	</div>
+               
+            </div>
+            <!--登录end-->
+  </div>
+
+  <!--注册-->
+    <div class="qlogin" id="qlogin" style="display: none; ">
+   
+    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8" method="post">
+	      <input type="hidden" name="to" value="reg"/>
+		      		       <input type="hidden" name="did" value="0"/>
+        <ul class="reg_form" id="reg-ul">
+        		<div id="userCue" class="cue">快速注册请注意格式</div>
+                <li>
+                	
+                    <label for="user"  class="input-tips2">用户名：</label>
+                    <div class="inputOuter2">
+                        <input type="text" id="user" name="username" maxlength="16" class="inputstyle2"/>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                <label for="passwd" class="input-tips2">密码：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd"  name="password" maxlength="16" class="inputstyle2"/>
+                    </div>
+                    
+                </li>
+                <li>
+                <label for="passwd2" class="input-tips2">确认密码：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd2" name="" maxlength="16" class="inputstyle2" />
+                    </div>
+                    
+                </li>
+                
+                <li>
+                 <label for="email" class="input-tips2">Email：</label>
+                    <div class="inputOuter2">
+                       
+                        <input type="text" id="email" name="email" maxlength="10" class="inputstyle2"/>
+                    </div>
+                   
+                </li>
+                
+                <li>
+                    <div class="inputArea">
+                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="同意协议并注册"/> <a href="#" class="zcxy" target="_blank">注册协议</a>
+                    </div>
+                    
+                </li><div class="cl"></div>
+            </ul></form>
+           
+    
     </div>
-
-    <div id="index_bg">
-        <!-- 背景图片资源自行替换修改 -->
-        <img id="index_bg_img" src="../resource/picture/background.jpg" width="120%" height="120%" >
-        <div id="shutter"></div>
+   
+    
     </div>
+    <!--注册end-->
+</div>
+<div class="jianyi">*推荐使用ie8或以上版本ie浏览器或Chrome内核浏览器访问本站</div>
+<script>
+		var verifyCode = new GVerify("v_container");
 
-    <!-- 遮罩 -->
-    <div id="mask"></div>
-    <!-- 用于显示提示信息 -->
-    <div id="message"></div>
-
-    <!-- begin nav -->
-    <div id="nav">
-        <div id="nav_login">登陆</div>
-        <div id="nav_register">注册</div>
-    </div>
-    <!-- end nav -->
-
-    <!-- begin 登陆 -->
-    <div id="login_block">
-        <input type="text" name="account" id="login_account" placeholder="请输入用户名"/>
-        <input type="password" name="password" id="login_password" placeholder="请输入密码"/>
-        <input type="submit" value="登陆" id="login">
-    </div>
-    <!-- end 登陆 -->
-
-    <!-- begin 注册 -->
-    <div id="register_block">
-        <input type="text" name="account" id="register_account" placeholder="请输入要注册的用户名"/>
-        <input type="password" name="password" id="register_password" placeholder="请设置密码"/>
-        <input type="password" name="password" id="register_password1" placeholder="请确认密码"/>
-        <input type="submit" value="注册" id="register">
-    </div>
-    <!-- den 注册 -->
-
-
-</body>
-</html>
+		document.getElementById("login_btn").onclick = function(){
+			var res = verifyCode.validate(document.getElementById("code_input").value);
+			if(res){
+				layer.msg("验证正确");
+				var username = $("#u").val();
+				var password = $("#p").val();
+				alert("用户名："+username+",密码："+password);
+				params = {"username":username,"password":password};
+        		$.ajax({
+            		dataType : "json",
+            		type : "GET",
+            		url : "http://127.0.0.1:8088/user/login",
+            		data : params,
+            		success : function(data) {
+                        alert("code"+data.code);
+            		    //根据返回值类型确定状态
+            		    switch(data.code){
+                            case 0:
+                                layer.msg("hahaha");
+                    			let uid = data.user.uid;
+                    			let username = data.user.username;
+                    			document.cookie = "uid="+uid;
+                    			window.location.href="./manage/address.html";
+                    		 	break;
+                    		case 1:
+                    		    layer.msg('登录失败，请重新输入!');
+                     		    break;
+                		};
+            		}
+        		})
+			}else{
+				layer.msg("验证码错误");
+			}
+		}
+</script>
+</body></html>

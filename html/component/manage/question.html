@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/OnlineTrainingWebApi/css/component/manage/question.css">
+<link rel="stylesheet" href="/OnlineTrainingWebApi/layui-v2.4.5/layui/css/layui.css">
+<div class="addquestion">
+	<h2>添加试题</h2>
+	<div class="qtitle">
+		<div class="layui-form-item layui-form-text">
+			<label class="layui-form-label">问题:</label>
+			<div class="layui-input-block">
+				<textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="qtype">
+		<span>题目类型：</span>
+		<select name="status" lay-verify="">
+			<option value="">请选择</option>
+			<option value="0" selected>选择题</option>
+			<option value="1">填空题</option>
+		</select>
+	</div>
+
+	<div class="questions">
+		<div class="layui-form-item">
+			<label class="layui-form-label">选项A：</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">选项B：</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">选项C：</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">选项D：</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+	</div>
+	<div class="qbtn"><button class="layui-btn">录入</button></div>
+</div>
