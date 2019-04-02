@@ -1,5 +1,8 @@
 <link rel="stylesheet" href="/OnlineTrainingWebApi/css/component/manage/question.css">
-<link rel="stylesheet" href="/OnlineTrainingWebApi/layui-v2.4.5/layui/css/layui.css">
+<!-- <link rel="stylesheet" href="/OnlineTrainingWebApi/layui-v2.4.5/layui/css/layui.css"> -->
+<!-- <script src="/OnlineTrainingWebApi/js/jquery-3.3.1.min.js"></script> -->
+<script src="/OnlineTrainingWebApi/js/component/manage/question.js"></script>
+
 <div class="addquestion">
 	<h2>添加试题</h2>
 	<div class="qtitle">
@@ -12,7 +15,7 @@
 	</div>
 	<div class="qtype">
 		<span>题目类型：</span>
-		<select name="status" lay-verify="">
+		<select name="status" lay-verify="" class="questiontype">
 			<option value="">请选择</option>
 			<option value="0" selected>选择题</option>
 			<option value="1">填空题</option>
@@ -20,28 +23,35 @@
 	</div>
 
 	<div class="questions">
-		<div class="layui-form-item">
+		<div class="layui-form-item qsel">
 			<label class="layui-form-label">选项A：</label>
 			<div class="layui-input-block">
-				<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+				<input type="text" id="optionA" required lay-verify="required" placeholder="请输入选项" autocomplete="off" class="layui-input">
 			</div>
 		</div>
-		<div class="layui-form-item">
+		<div class="layui-form-item qsel">
 			<label class="layui-form-label">选项B：</label>
 			<div class="layui-input-block">
-				<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+				<input type="text" id="optionB" required lay-verify="required" placeholder="请输入选项" autocomplete="off" class="layui-input">
 			</div>
 		</div>
-		<div class="layui-form-item">
+		<div class="layui-form-item qsel">
 			<label class="layui-form-label">选项C：</label>
 			<div class="layui-input-block">
-				<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+				<input type="text" id="optionC" required lay-verify="required" placeholder="请输入选项" autocomplete="off" class="layui-input">
 			</div>
 		</div>
-		<div class="layui-form-item">
+		<div class="layui-form-item qsel">
 			<label class="layui-form-label">选项D：</label>
 			<div class="layui-input-block">
-				<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+				<input type="text" id="optionD" required lay-verify="required" placeholder="请输入选项" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+
+		<div class="layui-form-item qanswer">
+			<label class="layui-form-label">答案:</label>
+			<div class="layui-input-block">
+				<input type="text" name="qanval" required lay-verify="required" placeholder="请输入答案" autocomplete="off" class="layui-input">
 			</div>
 		</div>
 	</div>

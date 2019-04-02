@@ -1,23 +1,23 @@
 <link rel="stylesheet" href="/OnlineTrainingWebApi/css/component/manage/test.css">
 <!-- <link rel="stylesheet" href="/OnlineTrainingWebApi/layui-v2.4.5/layui/css/layui.css"> -->
-
+<script src="/OnlineTrainingWebApi/js/component/manage/test.js"></script>
 <div class="addtest">
 <div>
 	<h2>新增套题</h2>
 	<div class="testname">
-    <label class="layui-form-label">输入框</label>
+    <label class="layui-form-label">标题：</label>
     <div class="layui-input-block">
-      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+      <input type="text" id="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
     </div>
 	</div>
 	
 <div class="teststatus">
-	状态
-	<select name="status" lay-verify="">
+	状态：
+	<select id="status" lay-verify="">
 		<option value="">请选择</option>
 		<option value="0" selected>公开</option>
 		<option value="1">私有</option>
 	</select>
 </div>
-<p class="testbtn"><button class="layui-btn">下一步</button></p>
+<p class="testbtn"><button class="layui-btn testnext">下一步</button></p>
 </div>

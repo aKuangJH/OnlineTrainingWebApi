@@ -1,6 +1,7 @@
 .addquestion {
 	width: 600px;
-	height: 500px;
+	height: auto;
+	padding: 10px;
 	box-shadow: 0 0 10px 2px #bbbbbb;
 	margin-left: auto;
 	margin-right: auto;
@@ -35,7 +36,7 @@
 }
 .questions {
 	width: 80%;
-	height: 200px;
+	height: auto;
 	/* border: #0000FF solid 1px; */
 	margin-left: auto;
 	margin-right: auto;
