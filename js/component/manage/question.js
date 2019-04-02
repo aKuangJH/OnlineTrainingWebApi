@@ -1,8 +1,5 @@
 $(function() {
 	
-	let status = GetQueryString("status");
-	let title = GetQueryString("title");
-	
 	// 默认选择题
 	$(".qanswer").hide();
 	
@@ -18,8 +15,9 @@ $(function() {
 		}
 	});
 	
+	// 录入按钮
 	$(".addquesrion").click(function(){
-		
+		addquestion();
 	});
 
 });
@@ -31,4 +29,49 @@ function GetQueryString(name)
 　　var r = window.location.search.substr(1).match(reg);
 　　if(r!=null)return unescape(r[2]);
    return null;
+}
+
+function addquestion(){
+	let status = GetQueryString("status");
+	let title = GetQueryString("title");
+	alert(title);
+	let qtitle = $("#desc").val();
+	if(qtitle){
+		let type = $(".questiontype option:checked").val();
+		if(type == 0){
+			let optionA = $("#optionA").val();
+			let optionB = $("#optionB").val();
+			let optionC = $("#optionC").val();
+			let optionD = $("#optionD").val();
+			let rightanswer = $('input[name="rans"]:checked').val();
+			alert("rightanswer===>"+rightanswer);
+			
+			let param = {"A":optionA,"B":optionB,"C":optionC,"D":optionD};
+			let options = JSON.stringify(param);
+			let params = {"tname":title,"status":status,"qtitle":qtitle,};
+			alert(options);
+			
+			$.ajax({
+				dataType: "json",
+				type: "POST",
+				url: "http://localhost:8088/test/addtest",
+				data: params,
+				success: function(data) {
+					//根据返回值类型确定状态
+					switch (data.code) {
+						case 0:
+						alert("okokok");
+							break;
+						case 1:
+							layer.msg('更新失败，请重新获取！');
+							break;
+					};
+				}
+			})
+			
+		}
+	}else {
+		layer.msg("请录入题目！");
+	}
+	 
 }

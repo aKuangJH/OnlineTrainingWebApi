@@ -9,7 +9,7 @@
 		<div class="layui-form-item layui-form-text">
 			<label class="layui-form-label">问题:</label>
 			<div class="layui-input-block">
-				<textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+				<textarea id="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
 			</div>
 		</div>
 	</div>
@@ -49,11 +49,18 @@
 		</div>
 
 		<div class="layui-form-item qanswer">
-			<label class="layui-form-label">答案:</label>
+			<label class="layui-form-label">正确答案:</label>
 			<div class="layui-input-block">
 				<input type="text" name="qanval" required lay-verify="required" placeholder="请输入答案" autocomplete="off" class="layui-input">
 			</div>
 		</div>
+		<div class="layui-form-item qsel">
+			<label class="layui-form-label">正确答案：</label>
+			<input type="radio" class="rans" name="rans" value="A" title="A">A
+			<input type="radio" class="rans" name="rans" value="B" title="B">B
+			<input type="radio" class="rans" name="rans" value="C" title="C">C
+			<input type="radio" class="rans" name="rans" value="D" title="D">D
+		</div>
 	</div>
-	<div class="qbtn"><button class="layui-btn">录入</button></div>
+	<div class="qbtn"><button class="layui-btn addquesrion">录入</button></div>
 </div>
