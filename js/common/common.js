@@ -50,5 +50,4 @@ function formatDate(date) {
 	} else {
 		return null;
 	}
-
-
+}

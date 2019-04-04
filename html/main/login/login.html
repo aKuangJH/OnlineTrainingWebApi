@@ -138,18 +138,15 @@
         		$.ajax({
             		dataType : "json",
             		type : "GET",
-            		url : "http://127.0.0.1:8088/user/login",
+            		url : "http://train.online.com/train/user/login",
             		data : params,
             		success : function(data) {
-                        alert("code"+data.code);
             		    //根据返回值类型确定状态
             		    switch(data.code){
                             case 0:
                                 layer.msg("hahaha");
-                    			let uid = data.user.uid;
-                    			let username = data.user.username;
-                    			document.cookie = "uid="+uid;
-                    			window.location.href="./manage/address.html";
+                    			// document.cookie = "uid="+uid;
+                    			window.location.href="../../manage/addtest.html";
                     		 	break;
                     		case 1:
                     		    layer.msg('登录失败，请重新输入!');

@@ -1,0 +1,49 @@
+.testlist {
+	height: auto;
+	/* border: #0000FF solid 1px; */
+}
+.testitem {
+	width: 400px;
+	height: 150px;
+	box-shadow: 0 0 10px 2px #bbbbbb;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+.testname {
+	text-align: center;
+	font-size: 16px;
+	text-: #000000;
+	margin-bottom: 30px;
+}
+.createdate {
+	/* border: #0000FF solid 1px; */
+	height: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+.date {
+	margin-left: 10%;
+}
+.teststatus {
+	/* border: #0000FF solid 1px; */
+	height: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	font-size: 15px;
+}
+.status {
+	margin-left: 20%;
+}
+.allbtn {
+	/* border: #0000FF solid 1px; */
+	height: 40px;
+	text-align: center;
+}
+.querybtn {
+	margin-right: 20px;
+}

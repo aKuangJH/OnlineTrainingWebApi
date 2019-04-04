@@ -44,12 +44,11 @@ function addquestion(){
 			let optionC = $("#optionC").val();
 			let optionD = $("#optionD").val();
 			let rightanswer = $('input[name="rans"]:checked').val();
-			alert("rightanswer===>"+rightanswer);
+			// alert("rightanswer===>"+rightanswer);
 			
 			let param = {"A":optionA,"B":optionB,"C":optionC,"D":optionD};
 			let options = JSON.stringify(param);
-			let params = {"tname":title,"status":status,"qtitle":qtitle,};
-			alert(options);
+			let params = {"tname":title,"status":status,"qtitle":qtitle,"qanswer":rightanswer,"qstyle":type};
 			
 			$.ajax({
 				dataType: "json",
@@ -68,7 +67,6 @@ function addquestion(){
 					};
 				}
 			})
-			
 		}
 	}else {
 		layer.msg("请录入题目！");

@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/OnlineTrainingWebApi/css/component/manage/allquestion.css">
+<!-- <link rel="stylesheet" href="/OnlineTrainingWebApi/layui-v2.4.5/layui/css/layui.css"> -->
+<script src="/OnlineTrainingWebApi/js/component/manage/allquestion.js"></script>
+<div class="questionlist">
+	<div class="questionitem">
+		<div class="headoption">
+			<i class="layui-icon layui-icon-circle-dot" title="题号"></i>
+			<i class="layui-icon layui-icon-close-fill rightbtn" title="删除"></i>
+			<i class="layui-icon layui-icon-edit rightbtn" title="编辑"></i>
+		</div>
+		<div class="questionname">
+			<h4>题目：</h4>
+			<textarea name="" required lay-verify="required" placeholder="请输入" class="layui-textarea onlyread" disabled="disabled">题目内容</textarea>
+		</div>
+		<div class="options">
+			<div class="option">
+			选项A：
+			<div class="layui-input-inline" style="width: 300px;">
+				<input type="text" id="optionA" placeholder="请输入选项" autocomplete="off" class="layui-input onlyread"  disabled="disabled">
+			</div>
+			</div>
+			
+			<div class="option">
+			选项B：
+			<div class="layui-input-inline" style="width: 300px;">
+				<input type="text" id="optionB" placeholder="请输入选项" autocomplete="off" class="layui-input onlyread" disabled="disabled">
+			</div>
+			</div>
+			
+			<div class="option">
+			选项C：
+			<div class="layui-input-inline" style="width: 300px;">
+				<input type="text" id="optionC" placeholder="请输入选项" autocomplete="off" class="layui-input onlyread" disabled="disabled">
+			</div>
+			</div>
+			
+			<div class="option" >
+			选项D：
+			<div class="layui-input-inline" style="width: 300px;">
+				<input type="text" id="optionD" placeholder="请输入选项" autocomplete="off" class="layui-input onlyread" disabled="disabled">
+			</div>
+			</div>
+		</div>
+		
+		<div class="qanswer">
+			答案:
+			<div class="layui-input-inline" style="width: 400px;">
+				<input type="text" id="qanval" placeholder="请输入答案" autocomplete="off" class="layui-input onlyread" disabled="disabled">
+			</div>
+		</div>
+		<div class="updatequestion">
+			<button class="layui-btn layui-btn-warm">修改</button>
+			<button class="layui-btn layui-btn-warm cancleupdate">取消</button>
+		</div>
+	</div>
+</div>
