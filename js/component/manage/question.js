@@ -53,7 +53,7 @@ function addquestion(){
 			$.ajax({
 				dataType: "json",
 				type: "POST",
-				url: "http://localhost:8088/test/addtest",
+				url: "http://train.online.com/server/test/addtest",
 				data: params,
 				success: function(data) {
 					//根据返回值类型确定状态

@@ -2,20 +2,22 @@ $(function() {
 	getalltest();
 });
 
+// 查询
 function showquestions(tid){
 	// alert(tid);
-	window.location.href = "http://train.online.com/OnlineTrainingWebApi/html/manage/showquestions.html?tid="+tid;
+	window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
 }
-
+// 删除
 function deletetest(tid){
 	alert(tid);
 }
 
+// 获取所有
 function getalltest() {
 	$.ajax({
 		dataType: "json",
 		type: "POST",
-		url: "http://train.online.com/train/test/getalltest",
+		url: "http://train.online.com/server/test/getalltest",
 		// data: params,
 		success: function(data) {
 			//根据返回值类型确定状态

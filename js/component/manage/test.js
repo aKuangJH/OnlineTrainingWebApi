@@ -11,7 +11,7 @@ $(function(){
 				// async:true,
 				dataType: "json",
 				type: "POST",
-				url: "http://train.online.com/train/test/addtest",
+				url: "http://train.online.com/server/test/addtest",
 				data: params,
 				success: function(data) {
 					//根据返回值类型确定状态
@@ -20,7 +20,7 @@ $(function(){
 						alert("okokok");
 							break;
 						case 1:
-							layer.msg('更新失败，请重新获取！');
+							layer.msg('新增失败，请重新获取！');
 							break;
 					};
 				}
