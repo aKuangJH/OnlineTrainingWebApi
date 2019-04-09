@@ -29,6 +29,11 @@
 	/* background-color: #959CA8; */
 	
 }
+.headoption .rightbtn:hover {
+	background-color: #959CA8;
+	cursor: pointer;
+}
+
 .options {
 	width: 100%;
 	height: auto;
