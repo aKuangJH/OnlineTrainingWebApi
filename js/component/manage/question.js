@@ -50,11 +50,19 @@ function addquestion(){
 					//根据返回值类型确定状态
 					switch (data.code) {
 						case 0:
-						alert("okokok");
+							layer.msg("录入成功！");	
+							setTimeout(function(){ 
+								window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+							}, 2000);				
 							break;
 						case 1:
 							layer.msg('录入失败，请重新录入！');
 							break;
+						case 2:
+							layer.msg('试题数已满！');	
+							setTimeout(function(){ 
+								window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+							}, 2000);
 					};
 				}
 			})
@@ -78,6 +86,12 @@ function addquestion(){
 							break;
 						case 1:
 							layer.msg('录入失败，请重新录入！');
+							break;
+						case 2:
+							layer.msg('试题数已满！');	
+							setTimeout(function(){ 
+								window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+							}, 2000);
 							break;
 					};
 				}

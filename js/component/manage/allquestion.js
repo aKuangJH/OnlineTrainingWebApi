@@ -242,11 +242,19 @@ function showallquestions() {
 								"</div>" +
 								"</div>");
 						}
-
+					}
+					if(data.questionlist.length<10){
+						layer.open({
+							title: '提示'
+							,content: ' 当前试题数不足十，请录入！'
+						  }); 
 					}
 					break;
 				case 1:
-					layer.msg('更新失败，请重新获取！');
+					layer.open({
+						title: '提示'
+						,content: '无试题，请录入十条试题！'
+				 	 });   
 					break;
 			};
 		}
