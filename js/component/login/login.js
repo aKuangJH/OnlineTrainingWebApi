@@ -1,5 +1,4 @@
 $(function() {
-
 	$('#switch_qlogin').click(function() {
 		$('#switch_login').removeClass("switch_btn_focus").addClass('switch_btn');
 		$('#switch_qlogin').removeClass("switch_btn").addClass('switch_btn_focus');
@@ -64,31 +63,222 @@ function getParam(pname) {
 var reMethod = "POST",
 	pwdmin = 6;
 
+var re = {
+	user: /^.{4,16}$/,
+	pas:eval('/^[a-zA-Z0-9]{'+pwdmin+',16}$/'),
+	email: /^\w+@[a-z0-9]+(\.[a-z]+){1,3}$/
+};
 $(document).ready(function() {
-
+	// 用户名
+	$('#user').blur(function(){
+		var val = this.value.trim();
+		if (!val) {
+			$('#user').css({
+				borderColor: "red"
+			});
+			$('#userCue').html("<b>用户名不能为空</b>");
+			$('#userCue').css({
+				display:'block'
+			});
+			$('.namebox+.check').css({
+				display:'none'
+			});
+			setTimeout(function(){
+				$('#userCue').css({
+					display:'none',
+					borderColor: "#D7D7D7"
+				});
+			},1500);
+		}else if (!re.user.test(val)) {
+			$('#user').css({
+				borderColor: "red"
+			});
+			$('#userCue').html("<b>请输入4-16位的用户名</b>");
+			$('#userCue').css({
+				display:'block'
+			})
+			$('.namebox+.check').css({
+				display:'none'
+			});
+			setTimeout(function(){
+				$('#userCue').css({
+					display:'none',
+					borderColor: "#D7D7D7"
+				});
+			},1500);
+		}else{
+			$('.userinp').css({
+				borderColor: "#D7D7D7"
+			});
+			$('.namebox+.check').css({
+				display:'inline-block'
+			});
+		}
+	})
+	// 密码
+	$('#passwd').blur(function() {
+	    var val = this.value.trim();
+	    if (!val && !$('#passwd').val()) {
+			$('#passwd').css({
+				borderColor: "red"
+			});
+			$('#userCue').html("<b>密码不能为空</b>");
+			$('#userCue').css({
+				display:'block'
+			});
+			setTimeout(function(){
+				$('#userCue').css({
+					display:'none',
+					borderColor: "#D7D7D7"
+				});
+			},1500);
+			return false;
+	    }else if((val.length>0&&val.length < pwdmin) || val.length>16) {
+			// alert(1111);
+			$('#passwd').css({
+				borderColor: "red"
+			});
+			$('#userCue').html("<b>请输入" + pwdmin + "-16位的密码</b>");
+			$('#userCue').css({
+				display:'block'
+			});
+			setTimeout(function(){
+				$('#userCue').css({
+					display:'none',
+					borderColor: "#D7D7D7"
+				});
+			},1500);
+			return false;
+	    }else{
+			$('#userCue').css({
+				display:'none'
+			});
+			$('.pwdinp').css({
+				borderColor: "#D7D7D7"
+			});		
+		}
+	})
+	// 重复密码
+	$('#passwd2').blur(function() {
+		var val = this.value.trim();
+		console.log(val != $('#passwd').val().trim());
+		if (val != $('#passwd').val().trim()) {
+			$('.pwdbox+.check').css({
+				display:'none'
+			});
+			$('.pwdbox2+.check').css({
+				display:'none'
+			});
+			$('#passwd').css({
+				borderColor: "red"
+			});
+			$('#passwd2').css({
+				borderColor: "red"
+			});
+			$('#userCue').html("<b>两次密码不一致！</b>");
+			$('#userCue').css({
+				display:'block',
+				borderColor: "#D7D7D7"
+			});
+			setTimeout(function(){
+				$('#userCue').css({
+					display:'none',
+					borderColor: "#D7D7D7"
+				});
+				$('#passwd').css({
+					borderColor: "#D7D7D7"
+				});
+			},1500);
+			$('#passwd2').val("");
+			return false;
+		}else{
+			$('#passwd2').css({
+				borderColor: "#D7D7D7"
+			});
+			$('#userCue').css({
+				display:'none'
+			}).html('');
+			$('.pwdbox+.check').css({
+				display:'inline-block'
+			});
+			$('.pwdbox2+.check').css({
+				display:'inline-block'
+			});
+		}
+	})
+	// 邮箱
+	$('#email').blur(function() {
+		var val = this.value.trim();
+		if (!re.email.test(val)) {
+			$('.emailbox+.check').css({
+				display:'none'
+			});
+			$('#email').css({
+				borderColor: "red"
+			});
+			$('#userCue').html("<b>请输入合法的邮箱</b>");
+			$('#userCue').css({
+				display:'block'
+			});
+			setTimeout(function(){
+				$('#userCue').css({
+					display:'none',
+					borderColor: "#D7D7D7"
+				});
+			},1500);
+			return false;
+		} else {
+			$('.emailbox').after(`<span class='check'></span>`);		
+			$('.emailinp').css({
+				borderColor: "#D7D7D7"
+			});
+			$('.emailbox+.check').css({
+				display:'inline-block'
+			});
+		}
+	})
 
 	$('#reg').click(function() {
+		switch (true) {
+			case !re.user.test($('#user').val()):
+				$('#userCue').html("<font color='red'><b>请输入正确的用户名</b></font>");
+				setTimeout(function(){
+					$('#userCue').css({
+						display:'none',
+						borderColor: "#D7D7D7"
+					});
+				},1500);
+				return false;
 
-		if ($('#user').val() == "") {
-			$('#user').focus().css({
-				border: "1px solid red",
-				boxShadow: "0 0 2px red"
-			});
-			$('#userCue').html("<font color='red'><b>×用户名不能为空</b></font>");
-			return false;
-		}
+			case !re.pas.test($('#pas').val()):
+				$('#userCue').html("<font color='red'><b>请输入正确的密码</b></font>");
+				setTimeout(function(){
+					$('#userCue').css({
+						display:'none',
+						borderColor: "#D7D7D7"
+					});
+				},1500);	
+				return false;
 
+			case $('#passwd').val() !== $('#passwd2').val():
+				$('#userCue').html("<font color='red'><b>两次密码必须一致</b></font>");	
+				setTimeout(function(){
+					$('#userCue').css({
+						display:'none',
+						borderColor: "#D7D7D7"
+					});
+				},1500);
+				return false;
 
-
-		if ($('#user').val().length < 4 || $('#user').val().length > 16) {
-
-			$('#user').focus().css({
-				border: "1px solid red",
-				boxShadow: "0 0 2px red"
-			});
-			$('#userCue').html("<font color='red'><b>×用户名位4-16字符</b></font>");
-			return false;
-
+			case !re.email.test($('#email').val()):
+				$('#userCue').html("<font color='red'><b>请输入合法的邮箱</b></font>");
+				setTimeout(function(){
+					$('#userCue').css({
+						display:'none',
+						borderColor: "#D7D7D7"
+					});
+				},1500);	
+				return false;
 		}
 		$.ajax({
 			type: reMethod,
@@ -109,39 +299,8 @@ $(document).ready(function() {
 						layer.msg('注册失败，请重新操作!');
 						break;
 				};
-
-
 			}
 		});
-
-
-		if ($('#passwd').val().length < pwdmin) {
-			$('#passwd').focus();
-			$('#userCue').html("<font color='red'><b>×密码不能小于" + pwdmin + "位</b></font>");
-			return false;
-		}
-		if ($('#passwd2').val() != $('#passwd').val()) {
-			$('#passwd2').focus();
-			$('#userCue').html("<font color='red'><b>×两次密码不一致！</b></font>");
-			return false;
-		}
-
-		var email = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
-		if (!email.test($('#email').val()) || $('#email').val().length < 5 || $('#email').val().length > 12) {
-			$('#email').focus().css({
-				border: "1px solid red",
-				boxShadow: "0 0 2px red"
-			});
-			$('#userCue').html("<font color='red'><b>×邮箱格式不正确</b></font>");
-			return false;
-		} else {
-			$('#email').css({
-				border: "1px solid #D7D7D7",
-				boxShadow: "none"
-			});
-
-		}
-
 		$('#regUser').submit();
 	});
 

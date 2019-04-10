@@ -1,7 +1,4 @@
 /* 系统首页样式 */
-#headersection {
-    height: 60px;
-}
 /* 头部start */
 
 .layui-header{
@@ -29,7 +26,7 @@
 .boxwrap{
     background: #eaeaea;
     padding-bottom: 2%;
-    width: 80%;
+    width: 90%;
     max-width: 1120px;
     margin: auto;
 }
@@ -38,7 +35,7 @@
     height: 280px;
     overflow: hidden;
     border: 1px solid #ccc;
-    margin: 8px auto;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -102,7 +99,7 @@
 .paperswrap{
     max-width: 1120px;
     background: #eaeaea;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding-bottom: 60px;
 }
@@ -209,7 +206,7 @@
 /* 试题列表end */
 /* 帖子列表start */
 .bbswrap{
-    width: 80%;
+    width: 90%;
     max-width: 1120px;
     background: #eaeaea;
     box-sizing: border-box;

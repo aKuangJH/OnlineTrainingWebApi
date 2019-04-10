@@ -4,3 +4,6 @@
 	border: solid #171717 1px;
 	
 }
+.layui-nav .layui-nav-item{
+	line-height: 50px;
+}

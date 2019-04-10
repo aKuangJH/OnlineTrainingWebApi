@@ -1,11 +1,9 @@
-html {
-	
-}
 body {
 	font-family:"Microsoft Yahei";
 	font-size:12px;
 	margin:0;
-background: #fff url(../../../img/component/1.jpg) 50% 0 no-repeat;}
+	background: #fff url(../../../img/component/1.jpg) 50% 0 no-repeat;
+}
 ul {
 	padding:0;
 	margin:0;
@@ -20,9 +18,7 @@ a:hover {
 	text-decoration:none;color:#f00;
 }
 .cl{ clear: both;}
-input[type="text"]:focus, input[type="password"]:focus {
-	outline:none;
-}
+
 input::-ms-clear {
 	display:none;
 }
@@ -55,7 +51,6 @@ input::-ms-clear {
 	height:45px;
 	line-height:45px;
 	outline:none;
-	*hide-focus:expression(this.hideFocus=true);
 }
 .header .switch .switch_btn_focus {
 	color:#333;
@@ -63,7 +58,6 @@ input::-ms-clear {
 	height:45px;
 	line-height:45px;
 	outline:none;
-	*hide-focus:expression(this.hideFocus=true);
 }
 .header .switch .switch_btn:hover {
 	color:#333;
@@ -90,6 +84,7 @@ input::-ms-clear {
 .web_login .reg_form {
 	width:300px;
 	margin:0 auto;
+	position: relative;
 }
 .web_login .input-tips {
 	float:left;
@@ -120,8 +115,9 @@ input::-ms-clear {
 	
 }
 .web_login .inputOuter2 {
-	width:200px;
-	margin-top:6px;margin-top:5px\9;
+	width:180px;
+	margin-top:6px;
+	margin-top:5px\9;
 	float:left;
 	
 }
@@ -149,7 +145,7 @@ input::-ms-clear {
 	font-size:16px;
 	ime-mode:disabled;
 }
-.web_login input.inputstyle2:focus,.web_login input.inputstyle:focus{border:1px solid #198BD4;box-shadow:0 0 2px #198BD4;}
+
 .web_login .inputstyle2 {
 	width:200px;
 	height:34px;
@@ -186,11 +182,18 @@ input::-ms-clear {
 }
 
 .cue {
-	height:40px;
-	line-height:40px;
+	position: absolute;
+    top: 107.5px;
+    left: 67px;
+	height:60px;
+	line-height:60px;
+	padding: 0 10px;
 	font-size:14px;
-	border:1px #CCCCCC solid;
-	margin-top:10px;margin-bottom:5px;
+	background: rgba(0,0,0,.6);
+	color: #fff;
+	margin-top:10px;
+	margin-bottom:5px;
+	border-radius: 11px;
 	text-align:center;
 	font-family:"Hiragino Sans GB", "Microsoft Yahei";
 }
@@ -216,32 +219,35 @@ box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .3);}
 .reg_form li {
 height: 55px;
 }
-.cue {
-margin-top: 15px;
-margin-bottom: 10px;border:1px solid #eee;border-radius:3px;
-}
-.web_login input.inputstyle2:focus, .web_login input.inputstyle:focus {
-border: 1px solid #5796f;
-box-shadow: 0 0 0;
-}
+
 .web_login .reg_form {
 width: 300px;
-margin: 0 auto;
+margin: 20px auto 10px;
 }
-.web_login .inputstyle2 {border-radius:2px;width:210px;}
+.web_login .inputstyle2 {border-radius:2px;width:180px;}
 .web_login .input-tips2 {
-padding-right: 5px;
-width: 80px;_width: 75px;_font-size:12px;}
+	padding-right: 5px;
+	width: 80px;
+	_width: 75px;
+	_font-size:12px;
+}
 .button_blue
 {
 	display:inline-block;
-	float:left;
-	height:41px;border-radius:4px;
-	background:#2795dc;border:none;cursor:pointer;
-	border-bottom:3px solid #0078b3;*border-bottom:none;
+	height:41px;
+	border-radius:4px;
+	background:#2795dc;
+	border:none;
+	cursor:pointer;
+	border-bottom:3px solid #0078b3;
+	*border-bottom:none;
 	color:#fff;
-	font-size:16px;padding:0 10px;*width:140px;
-	text-align:center;outline:none;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif;
+	font-size:16px;
+	padding:0 10px;
+	*width:140px;
+	text-align:center;
+	outline:none;
+	font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif;
 }
 input.button_blue:hover
 {
@@ -250,9 +256,37 @@ input.button_blue:hover
 	color:#fff;
 	text-decoration:none;
 }
+input{
+	outline-style: none;
+}
 a.zcxy {text-decoration: underline;line-height:58px;margin-left:15px;color: #959ca8;}
 .web_login .login_form {margin-top:30px;}
 .web_login .uinArea {
 height: 60px;}
 .header .switch{left:70px;}
 
+.check {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #44b549;
+    border-radius: 14px;
+    top: 16px;
+    left: 10px;
+}
+
+.check::after {
+	content: "";
+	position: absolute;
+	left: 3px;
+    top: 3px;
+	width: 50%;
+	height: 25%;
+	border: 2px solid #fff;
+	border-radius: 1px;
+	border-top: none;
+	border-right: none;
+	background: transparent;
+	transform: rotate(-45deg);
+}

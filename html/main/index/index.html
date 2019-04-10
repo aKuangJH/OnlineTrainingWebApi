@@ -6,28 +6,13 @@
 	<link rel="stylesheet" href="../../../css/common/base.css">
 	<link rel="stylesheet" href="../../../layui-v2.4.5/layui/css/layui.css">
 	<link rel="stylesheet" href="../../../css/component/index/index.css">
+	<link rel="stylesheet" href="../../../css/component/top.css">
 </head>
 <body>
-		<div id="headersection">
-		<!-- 头部 -->			
-		</div>
+	    <!-- 头部 -->	
+		<div id="headersection"></div>
 		<!-- 轮播 -->
-		<div class="boxwrap">
-			<div id="box">
-				<ul>
-					<li><img src="http://m.elongstatic.com/static/webapp/hotel/wireless/H5/activityplatform/online2810_h5uploader_%E5%A4%B4%E5%9B%BE.jpg" alt=""></li>
-					<li><img src="http://m.elongstatic.com/static/webapp/hotel/wireless/H5/activityplatform/online2803_h5uploader_%E5%A4%B4%E5%9B%BE.jpg" alt=""></li>
-					<li><img src="http://m.elongstatic.com/static/webapp/hotel/wireless/H5/activityplatform/online2276_mbonetitlePic_121.jpg" alt=""></li>
-				</ul>
-				<div class="btnLeft"><img src="../img/part/right.png" alt=""></div>
-				<div class="btnRight"><img src="../img/part/right.png" alt=""></div>
-				<p>
-					<span class="active"></span>
-					<span></span>
-					<span></span>
-				</p>
-			</div>
-		</div>
+		<div class="boxwrap"></div>
 		<!-- 试题列表 -->
 		<div class="paperswrap">
 			<div class="papers">
@@ -132,7 +117,10 @@
 	<script>
 		$.get("../../component/top.html", function(data) {
 			$("#headersection").html(data);
-		})
+		});
+		$.get("../../component/index/banner.html",function(data){
+			$(".boxwrap").html(data);
+		});
 	</script>
 </body>
 </html>
