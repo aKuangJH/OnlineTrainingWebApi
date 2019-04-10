@@ -59,10 +59,48 @@ function addquestion(){
 					//根据返回值类型确定状态
 					switch (data.code) {
 						case 0:
-						alert("okokok");
+							layer.msg("录入成功！");	
+							setTimeout(function(){ 
+								window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+							}, 2000);				
 							break;
 						case 1:
-							layer.msg('更新失败，请重新获取！');
+							layer.msg('录入失败，请重新录入！');
+							break;
+						case 2:
+							layer.msg('试题数已满！');	
+							setTimeout(function(){ 
+								window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+							}, 2000);
+					};
+				}
+			})
+		}else if(type == 1){//填空题
+			let rightanswer = $("input[name=qanval]").val();
+			let params = {"tid":tid,"qtitle":qtitle,"qanswer":rightanswer,"qstyle":type};
+
+			$.ajax({
+				dataType: "json",
+				type: "POST",
+				url: "http://train.online.com/server/question/addquestion",
+				data: params,
+				success: function(data) {
+					//根据返回值类型确定状态
+					switch (data.code) {
+						case 0:
+						layer.msg("录入成功！");
+						setTimeout(function(){ 
+							window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+						}, 2000);
+							break;
+						case 1:
+							layer.msg('录入失败，请重新录入！');
+							break;
+						case 2:
+							layer.msg('试题数已满！');	
+							setTimeout(function(){ 
+								window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+							}, 2000);
 							break;
 					};
 				}
