@@ -1,4 +1,7 @@
 $(function() {
+
+	showallquestions();
+
 	// 样式状态
 	$(".rightbtn").hover(function() {
 		$(this).css({

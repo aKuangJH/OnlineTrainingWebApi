@@ -22,19 +22,8 @@ $(function() {
 
 });
 
-// 获取url上对应参数
-function GetQueryString(name)
-{
-　　var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-　　var r = window.location.search.substr(1).match(reg);
-　　if(r!=null)return unescape(r[2]);
-   return null;
-}
-
 function addquestion(){
-	let status = GetQueryString("status");
-	let title = GetQueryString("title");
-	alert(title);
+	let tid = GetQueryString("tid");
 	let qtitle = $("#desc").val();
 	if(qtitle){
 		let type = $(".questiontype option:checked").val();
@@ -48,12 +37,12 @@ function addquestion(){
 			
 			let param = {"A":optionA,"B":optionB,"C":optionC,"D":optionD};
 			let options = JSON.stringify(param);
-			let params = {"tname":title,"status":status,"qtitle":qtitle,"qanswer":rightanswer,"qstyle":type};
+			let params = {"tid":tid,"qtitle":qtitle,"qanswer":rightanswer,"qstyle":type,"options":options};
 			
 			$.ajax({
 				dataType: "json",
 				type: "POST",
-				url: "http://train.online.com/server/test/addtest",
+				url: "http://train.online.com/server/question/addquestion",
 				data: params,
 				success: function(data) {
 					//根据返回值类型确定状态
