@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
+		<title>OnlineTrainingSystem</title>
+		<link rel="stylesheet" href="../../layui-v2.4.5/layui/css/layui.css">
+		
+	</head>
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="tframetop"></div>
+			<div class="leftmenu"></div>
+
+			<div class="layui-body">
+				<div class="content"></div>
+			</div>
+
+			<div class="layui-footer">
+				<div id="test2"></div>
+			</div>
+		</div>
+		
+		
+		<script src="../../js/jquery-3.3.1.min.js"></script>
+		<script src="../../js/common/common.js"></script>
+		<script src="../../layui-v2.4.5/layui/layui.all.js"></script>
+		<!-- <script src="../../js/component/manage/message.js"></script> -->
+		<script type="text/javascript">
+			$.get("../component/top.html", function(data) {
+				$(".tframetop").html(data);
+			});
+			$.get("../component/manage/adminLeftMenu.html", function(data) {
+				$(".leftmenu").html(data);
+            });
+            // $.get("../component/manage/message.html", function(data) {
+			// 	$(".content").html(data);
+			// });
+		</script>
+				
+	</body>
+</html>

@@ -60,3 +60,16 @@ function GetQueryString(name)
 　　if(r!=null)return unescape(r[2]);
    return null;
 }
+
+//建立一個可存取到該file的url  
+function getObjectURL(file) {
+	var url = null;
+	if (window.createObjectURL != undefined) {
+		url = window.createObjectURL(file);
+	} else if (window.URL != undefined) {
+		url = window.URL.createObjectURL(file);
+	} else if (window.webkitURL != undefined) {
+		url = window.webkitURL.createObjectURL(file);
+	}
+	return url;
+}

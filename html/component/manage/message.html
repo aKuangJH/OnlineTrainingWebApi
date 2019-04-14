@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="../../../css/component/manage/message.css">
+<!-- <link rel="stylesheet" href="../../../layui-v2.4.5/layui/css/layui.css"> -->
+<script src="../../../js/component/manage/message.js"></script>
+<div class="usermsg">
+    <div class="msgitem">
+        <div class="layui-form-item">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        <button type="button" class="layui-btn layui-btn layui-btn-primary" id="uploadpic">
+                            上传头像
+                        </button>
+                    </label>
+                    <div class="layui-input-block" id="selpic">
+                        <!-- <div id="imgbox">
+                            <img src="../../../img/component/1.jpg" />
+                        </div> -->
+                    </div>
+                    <div class="layui-input-block">
+                        <input type="text" name="uimg" id="uimg" class="layui-input" style="display: none;">
+                    </div>
+                </div>
+                <hr>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户名:</label>
+                    <div class="layui-input-block">
+                        <input type="text"  id="username" class="layui-input" disabled>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">真实姓名:</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="realname" required placeholder="请输入真实姓名" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                        <label class="layui-form-label">手机:</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="phone" required placeholder="phone" class="layui-input">
+                        </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">邮箱:</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="email" required placeholder="email" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">个性签名:</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="description" required placeholder="请输入心情" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block upbtn">
+                        <button class="layui-btn" lay-submit lay-filter="go">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- <script src="../../../js/jquery-3.3.1.min.js"></script> -->
+<!-- <script src="../../../layui-v2.4.5/layui/layui.all.js"></script> -->
