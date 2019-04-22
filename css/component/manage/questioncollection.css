@@ -1,0 +1,42 @@
+.collectitem {
+    width: 550px;
+    height: auto;
+    padding: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    box-shadow: 0 0 10px 2px #bbbbbb;
+}
+.questionname {
+	font-size: 14px;
+	height: auto;
+	/* border: #0000FF solid 1px; */
+	margin-bottom: 10px;
+}
+.questionname h4 {
+	font-size: 16px;
+	font-weight: 500;
+}
+.options {
+	width: 100%;
+	height: auto;
+	/* border: #0000FF solid 1px; */
+}
+.option {
+	/* float: left; */
+	margin-left: 5%;
+	margin-bottom: 10px;
+}
+.qanswer {
+	margin-left: 5%;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+.updatequestion {
+	margin-top: 10px;
+	text-align: center;
+	display: none;
+}
+.btnright {
+	float: right;
+}

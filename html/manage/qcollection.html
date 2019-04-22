@@ -6,7 +6,6 @@
 		<title>OnlineTrainingSystem</title>
 		<link rel="stylesheet" href="../../layui-v2.4.5/layui/css/layui.css">
 		
-		
 	</head>
 	<body class="layui-layout-body">
 		<div class="layui-layout layui-layout-admin">
@@ -14,8 +13,6 @@
 			<div class="leftmenu"></div>
 
 			<div class="layui-body">
-				<div class="optionsheader"></div>
-				
 				<div class="content"></div>
 			</div>
 
@@ -27,7 +24,6 @@
 		
 		<script src="../../js/jquery-3.3.1.min.js"></script>
 		<script src="../../js/common/common.js"></script>
-		<script src="../../layui-v2.4.5/layui/layui.all.js"></script>	
 		<script type="text/javascript">
 			$.get("../component/top.html", function(data) {
 				$(".tframetop").html(data);
@@ -35,11 +31,10 @@
 			$.get("../component/manage/adminLeftMenu.html", function(data) {
 				$(".leftmenu").html(data);
 			});
-			$.get("../component/manage/message.html", function(data) {
+            $.get("../component/manage/questioncollect.html", function(data) {
 				$(".content").html(data);
 			});
 		</script>
-		
-			
+		<script src="../../layui-v2.4.5/layui/layui.all.js"></script>		
 	</body>
 </html>

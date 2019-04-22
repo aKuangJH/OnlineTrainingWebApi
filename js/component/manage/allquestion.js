@@ -1,51 +1,51 @@
-$(function() {
+$(function () {
 
 	showallquestions();
 
 	// 样式状态
-	$(".rightbtn").hover(function() {
-		$(this).css({
-			"background-color": "#959CA8",
-			"cursor": "pointer"
-		});
-	}, function() {
-		$(".rightbtn").css({
-			"background-color": "white"
-		});
-	});
+	// $(".rightbtn").hover(function () {
+	// 	$(this).css({
+	// 		"background-color": "#959CA8",
+	// 		"cursor": "pointer"
+	// 	});
+	// }, function () {
+	// 	$(".rightbtn").css({
+	// 		"background-color": "white"
+	// 	});
+	// });
 
 	// 编辑按钮
-	$(".layui-icon-edit").click(function() {
-		layer.confirm('是否编辑题目', {
-			btn: ['确认', '取消'] //可以无限个按钮
-		}, function(index, layero) {
-			//按钮【按钮一】的回调
-			// 可编辑
-			$(".onlyread").removeAttr("disabled");
-			// 显示按钮
-			$(".updatequestion").show();
-			// 关闭弹层
-			layer.close(layer.index);
-		});
-		
-	});
-	
+	// $(".layui-icon-edit").click(function () {
+	// 	layer.confirm('是否编辑题目', {
+	// 		btn: ['确认', '取消'] //可以无限个按钮
+	// 	}, function (index, layero) {
+	// 		//按钮【按钮一】的回调
+	// 		// 可编辑
+	// 		$(".onlyread").removeAttr("disabled");
+	// 		// 显示按钮
+	// 		$(".updatequestion").show();
+	// 		// 关闭弹层
+	// 		layer.close(layer.index);
+	// 	});
+
+	// });
+
 	// 删除按钮
-	$(".layui-icon-close-fill").click(function() {
-		layer.confirm('是否删除题目', {
-			btn: ['确认', '取消'] //可以无限个按钮
-		}, function(index, layero) {
-			//按钮【按钮一】的回调
-			
-			layer.close(layer.index);
-		});
-		
-	});
+	// $(".layui-icon-close-fill").click(function () {
+	// 	layer.confirm('是否删除题目', {
+	// 		btn: ['确认', '取消'] //可以无限个按钮
+	// 	}, function (index, layero) {
+	// 		//按钮【按钮一】的回调
+
+	// 		layer.close(layer.index);
+	// 	});
+
+	// });
 
 	// 取消按钮
-	$(".cancleupdate").click(function(){
-		window.location.reload();
-	});
+	// $(".cancleupdate").click(function () {
+	// 	window.location.reload();
+	// });
 });
 
 // 编辑功能
@@ -108,7 +108,7 @@ function updatetext(obj, qid) {
 	let qtitle = $(obj).parent().prevAll().find(".layui-textarea").val();
 	let qanswer = $(obj).parent().prevAll().find("#qanval").val()
 
-	let param = { "qid": qid, "tid": tid, "qtitle": qtitle, "qstyle": "1", "qanswer":qanswer};
+	let param = { "qid": qid, "tid": tid, "qtitle": qtitle, "qstyle": "1", "qanswer": qanswer };
 	// alert($(obj).parent().prevAll().find(".layui-textarea").val());
 	$.ajax({
 		dataType: "json",
@@ -166,6 +166,10 @@ function deltext(qid) {
 		})
 
 	});
+}
+
+function canclebtn(){
+	window.location.reload();
 }
 
 // 获取题目列表
@@ -227,7 +231,7 @@ function showallquestions() {
 								"</div>" +
 								"<div class='updatequestion'>" +
 								"<button class='layui-btn layui-btn-warm' onclick='updateselect(this," + data.questionlist[i].qid + ")'>修改</button>" +
-								"<button class='layui-btn layui-btn-warm cancleupdate'>取消</button>" +
+								"<button class='layui-btn layui-btn-warm cancleupdate' onclick='canclebtn()'>取消</button>" +
 								"</div>" +
 								"</div>");
 						} else if (data.questionlist[i].qstyle == 1) {
@@ -249,23 +253,34 @@ function showallquestions() {
 								"</div>" +
 								"<div class='updatequestion'>" +
 								"<button class='layui-btn layui-btn-warm' onclick='updatetext(this," + data.questionlist[i].qid + ")'>修改</button>" +
-								"<button class='layui-btn layui-btn-warm cancleupdate'>取消</button>" +
+								"<button class='layui-btn layui-btn-warm cancleupdate' onclick='canclebtn()'>取消</button>" +
 								"</div>" +
 								"</div>");
 						}
 					}
-					if(data.questionlist.length<10){
+					if (data.questionlist.length < 10) {
 						layer.open({
 							title: '提示'
-							,content: ' 当前试题数不足十，请录入！'
-						  }); 
+							, content: ' 当前试题数不足十，请录入！'
+						});
 					}
+					// 样式状态
+					$(".rightbtn").hover(function () {
+						$(this).css({
+							"background-color": "#959CA8",
+							"cursor": "pointer"
+						});
+					}, function () {
+						$(".rightbtn").css({
+							"background-color": "white"
+						});
+					});
 					break;
 				case 1:
 					layer.open({
 						title: '提示'
-						,content: '无试题，请录入十条试题！'
-				 	 });   
+						, content: '无试题，请录入十条试题！'
+					});
 					break;
 			};
 		}

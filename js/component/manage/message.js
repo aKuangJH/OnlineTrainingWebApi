@@ -8,7 +8,7 @@ layui.use('form', function() {
 	var form = layui.form;
 	//监听提交
 	form.on('submit(go)', function(data) {
-		layer.msg(JSON.stringify(data.field));
+		// layer.msg(JSON.stringify(data.field));
 		$.ajax({
 			dataType: "json",
 			type: "POST",
