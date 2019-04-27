@@ -1,14 +1,14 @@
 /* 系统首页样式 */
 /* 头部start */
 
-.layui-header{
+/* .layui-header{
     position:relative;
     z-index:1000;
     background:0 0;
     height:50px;
     max-width: 1120px;
     margin: auto;
-}
+} */
 .header .logo{
     position:absolute;
     left:0;

@@ -17,7 +17,7 @@ $(function(){
 					//根据返回值类型确定状态
 					switch (data.code) {
 						case 0:
-						alert("okokok");
+							window.location.href = "http://train.online.com/html/manage/foruser/showalltest.html";
 							break;
 						case 1:
 							layer.msg('新增失败，请重新获取！');

@@ -74,3 +74,11 @@ function getObjectURL(file) {
 	}
 	return url;
 }
+
+//根据权限展示不同列表
+function showDiffList() {
+	let role = get_cookie("role");
+	if(role == 1){
+		$(".layui-nav-tree").html("");
+	}
+}

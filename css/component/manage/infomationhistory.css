@@ -1,0 +1,27 @@
+.infoitem {
+    width: 700px;
+    height: auto;
+    padding: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    box-shadow: 0 0 10px 2px #bbbbbb;
+
+}
+.itemtop {
+    height: 30px;
+    border: #0000FF solid 1px;
+}
+.layui-btn {
+    float: right;
+}
+.infomationname {
+    height: 50px;
+    border: #bbbbbb solid 1px;
+}
+.infolist {
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}

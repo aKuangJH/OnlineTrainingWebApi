@@ -5,7 +5,7 @@ $(function() {
 // 查询
 function showquestions(tid){
 	// alert(tid);
-	window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+	window.location.href = "http://train.online.com/html/manage/foruser/showquestions.html?tid="+tid;
 }
 // 删除
 function deletetest(tid){
@@ -30,7 +30,7 @@ function getalltest() {
 						"<div class='teststatus'><span>状态：</span><span class='status'>"+data.testlist[i].status+"</span></div>"+						
 						"<div class='allbtn'><span class='querybtn'><button class='layui-btn layui-btn-normal' onclick='showquestions("+data.testlist[i].tid+")'>查询</button></span><span class='deletebtn'><button class='layui-btn layui-btn-danger' onclick='deletetest("+data.testlist[i].tid+")'>删除</button></span></div>"+
 						"</div>");
-				}	
+				}
 					break;
 				case 1:
 					layer.msg('更新失败，请重新获取！');
