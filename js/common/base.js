@@ -423,10 +423,6 @@ var U = (function() {
             fn.call(obj);
         });
     };
-
-
-
-
     return {
         getStyle: getStyle, // 获取元素样式
         move: move, // 缓冲运动，接收三个参数：元素, 样式json, 回调(回调中的this为当前元素)
@@ -464,7 +460,6 @@ var U = (function() {
         stop: stop, // 阻止冒泡，参数为事件对象
         prevent: prevent, // 阻止事件的默认行为，参数为事件对象
         getWheelDelta: getWheelDelta, // 鼠标滚轮方向，参数为事件对象
-        bind: bind // 事件绑定
-
+        bind: bind, // 事件绑定
     };
 })();

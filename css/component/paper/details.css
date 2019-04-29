@@ -3,6 +3,15 @@ body{
     background: #eee;
     color:#333;
 }
+.usericon{
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 16px;
+    background: url(../../../img/component/icon-b.png) no-repeat;
+    background-size: 32px 32px;
+    display: block;
+}
 /* 选择 */
 .choice{
     width: 80%;
@@ -108,7 +117,7 @@ label.radio pre {
 /* 填空题 */
 .blank{
     width: 80%;
-    margin: 10px auto;
+    margin: 10px auto 0;
 }
 .blank .type{
     width: 100%;
@@ -134,4 +143,82 @@ label.radio pre {
     text-indent: 3px;
     border:0px;
     border-bottom: 1px solid #909090;
+}
+/* 提交 */
+.submit{
+    width: 80%;
+    padding: 10px 0;
+    margin: 0 auto;
+    background: #fff;
+}
+.submit .yes{
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 21px;
+    border-radius: 15px;
+    text-align: center;
+    border:1px solid #0fd59d;
+    color: #1abc9c;
+}
+/* 遮罩弹层 */
+.alertwrap{
+    background: rgba(128,128,128,.5); 
+    position: fixed; 
+    left: 0px; 
+    top: 0px; 
+    width: 100%; 
+    height: 100%; 
+    display: none; 
+    z-index: 20; 
+}
+.alert{ 
+    position: fixed; 
+    display: none; 
+    z-index: 50 !important; 
+    background-color: White; 
+    width: 600px; 
+    height: 200px;
+    box-sizing: border-box;
+    border:5px solid #cccc99; 
+    left: 50%; 
+    top: 50%; 
+    margin-top: -100px; /*--高度的一半--*/ 
+    margin-left: -300px; /*--宽度的一半--*/ 
+}
+.alert p{
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 60px auto 30px;
+}
+.alert .choose{
+    display: flex;
+    width: 400px;
+    height: 50px;
+    justify-content: space-around;
+    margin: 38px auto 0;
+}
+.alert .choose .no{
+    width: 100px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border:1px solid #0fd59d;
+    border-radius: 25px;
+    color: #fff;
+    background: #0fd59d;
+}
+.alert .choose .yes{
+    width: 70px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border:1px solid #0fd59d;
+    border-radius: 25px;
+    color: #1abc9c;
 }
