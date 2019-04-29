@@ -5,21 +5,33 @@ $(function () {
     let username = get_cookie('username');
     let role = get_cookie('role');
 
-    $(".layui-nav-img").attr("src",path + uimg);
-    if(role == 1){
+    // $(".headpic").attr("src", path + uimg);
+    $(".usermsg img").attr("src", path + uimg);
+    if (role == 1) {
         $(".usermsg span").text("管理员");
-    }else{
+    } else if(role == 0){
         $(".usermsg span").text(username);
     }
-    
+
     //清空Cookie
-    $(".quit").click(function(){
-        setCookie('uid','','-1');
-        setCookie('username','','-1');
-        setCookie('uimg','','-1');
+    $(".quit").click(function () {
+        setCookie('uid', '', '-1');
+        setCookie('username', '', '-1');
+        setCookie('uimg', '', '-1');
+        setCookie('role', '', '-1');
     })
 
 
+    $(".navmenu").mouseover(function () {
+        $(this).children("ul").show();
+        // $(this).children("ul").append("<li><a href='#'>个人信息</a> </li>"+
+        // "<li><a href='#'>考试记录</a> </li>"+
+        // "<li><a href='#'>历史浏览</a> </li>")
+    })
+
+    $(".navmenu").mouseout(function () {
+        $(this).children("ul").hide();
+    })
 })
 
 // function addanswer(){

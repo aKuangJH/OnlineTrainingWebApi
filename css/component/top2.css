@@ -1,0 +1,66 @@
+* {
+    margin:0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+#nav a {
+    color: #FFF;
+}
+#nav .secondlist a {
+    color: #000;
+}
+#nav {
+    height: 50px;
+    background: #ccc;
+}
+.leftpart {
+    margin-left: 30px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    color: #333;
+}
+.rightpart {
+    float: right;
+}
+.userpart {
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #FFF;
+}
+.headpic {
+    width: 20px;
+    height: 20px;
+}
+#nav ul{
+    box-shadow: 0 0 5px 1px #bbbbbb;
+}
+#nav ul li{
+    float:left;
+    display:block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    position: relative;
+}
+#nav .secondlist li {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+#nav ul li ul li{
+    float: none;
+}
+#nav ul li ul{
+    position: absolute;
+    top:50px;
+    left: 0;
+    display: none;
+}
+.navmenu .secondlist li:hover{
+    background-color: #e3e4e5;
+}

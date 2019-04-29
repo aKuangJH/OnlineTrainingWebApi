@@ -6,7 +6,6 @@
     margin-left: auto;
     margin-top: 5%;
     box-shadow: 0 0 10px 2px #bbbbbb;
-
 }
 .itemtop {
     height: 30px;
@@ -20,7 +19,7 @@
     border: #bbbbbb solid 1px;
 }
 .infolist {
-    width: 50%;
+    width: 98%;
     height: auto;
     margin-left: auto;
     margin-right: auto;

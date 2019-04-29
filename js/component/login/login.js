@@ -47,9 +47,13 @@ $(function () {
 					//根据返回值类型确定状态
 					switch (data.code) {
 						case 0:
-							layer.msg("hahaha");
-							// document.cookie = "uid="+uid;
-							window.location.href = "../index/index.html";
+							let role = get_cookie("role");
+							alert(role)
+							if(role == 1) {
+								window.location.href = "../../manage/foruser/addtest.html";
+							}else if(role == 0){
+								window.location.href = "../index/index.html";
+							}
 							break;
 						case 1:
 							layer.msg('登录失败，请重新输入!');
