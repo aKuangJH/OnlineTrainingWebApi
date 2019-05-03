@@ -16,7 +16,7 @@ function showDiffList() {
             "<li class='layui-nav-item layui-nav-itemed'>"+
                 "<a href='javascript:;'>套题模块</a>"+
                 "<dl class='layui-nav-child'>"+
-                    "<dd><a href='#'>套题管理</a></dd>"+
+                    "<dd><a href='http://train.online.com/html/manage/foradmin/alltest.html'>套题管理</a></dd>"+
                     "<dd><a href='#'>套题审核</a></dd>"+
                 "</dl>"+
             "</li>"+

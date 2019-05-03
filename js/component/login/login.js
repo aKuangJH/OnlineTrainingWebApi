@@ -48,9 +48,9 @@ $(function () {
 					switch (data.code) {
 						case 0:
 							let role = get_cookie("role");
-							alert(role)
+							// alert(role)
 							if(role == 1) {
-								window.location.href = "../../manage/foruser/addtest.html";
+								window.location.href = "../../manage/foradmin/allinformation.html";
 							}else if(role == 0){
 								window.location.href = "../index/index.html";
 							}

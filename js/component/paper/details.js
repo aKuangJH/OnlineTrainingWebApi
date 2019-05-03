@@ -2,7 +2,7 @@
     function(){
         $.ajax({
             type: 'post',
-            url: 'http://10.161.118.64:8088/server/question/showallquestions?tid=1',
+            url: 'http://train.online.com/server/question/showallquestions?tid=1',
             dataType: 'json',
             error: function(XmlHttpRequest, textStatus, errorThrown) {
                 console.log("操作失败!");

@@ -9,14 +9,14 @@
     background-size: 32px 32px;
     margin-top: 7px;
 }
-.layui-header{
+/* .layui-header{
     position:relative;
     z-index:1000;
     background:0 0;
     height:50px;
     max-width: 1120px;
     margin: auto;
-}
+} */
 .header .logo{
     position:absolute;
     left:0;
@@ -314,5 +314,8 @@
     width: 179px;
     top: 12px;
     position: relative;
+}
+#pagehelper {
+    text-align: center;
 }
 /* 帖子列表end */
