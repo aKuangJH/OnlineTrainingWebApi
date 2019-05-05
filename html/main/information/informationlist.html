@@ -3,54 +3,53 @@
 
 <head>
     <title>帖子列表页</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="../../../layui-v2.4.5/layui/css/layui.css" rel="stylesheet" type="text/css" />
-    <style>
-        .headpart {
-            height: 50px;
-            border: 1px solid #000;
-        }
+    <link href="../../../css/component/information/infolist.css" rel="stylesheet" type="text/css" />
 
-        .contentpart {
-            width: 80%;
-            margin-top: 20px;
-            margin-right: auto;
-            margin-left: auto;
-            height: 800px;
-            border: 1px solid red;
-        }
-
-        .leftmenu {
-            float: left;
-            width: 15%;
-            height: 100%;
-            border: 1px solid green;
-        }
-
-        .infolist {
-            float: left;
-            width: 80%;
-            height: 100%;
-            border: 1px solid blue;
-            margin-left: 10px;
-        }
-    </style>
 </head>
 
-<body>
+<body style="background-color: #BBBBBB">
     <div class="headpart"></div>
     <div class="contentpart">
-        <div class="leftmenu"></div>
-        <div class="infolist"></div>
+        <div class="leftmenu">
+            <ul class="layui-nav layui-nav-tree layui-bg-blue" style="width: 100%" lay-filter="test">
+                <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+                <li class="layui-nav-item layui-nav-itemed">
+                    <dl class="layui-nav-child leftlist">
+                        <!-- <dd><a href="javascript:;">选项1</a></dd> -->
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="infolist">
+            <div class="title"><h3 id="stylename">JAVA</h3></div>
+            <div class="infostylelist"></div>
+            <div class="title"><h3><i class="layui-icon">&#xe756;</i>热门帖子</h3></div>
+            <div class="infohotlist"></div>
+        </div>
     </div>
 
     <script type="text/javascript" src="../../../js/jquery-3.3.1.min.js"></script>
-    <script>
-        $.get("../../component/information/infolist.html", function (data) {
-            $(".infolist").html(data);
-        });
+    <script src="../../../js/common/common.js"></script>
 
+    <script>
+        $.get("../../component/top.html", function (data) {
+            $(".headpart").html(data);
+        });
+        $.get("../../component/information/infolist.html", function (data) {
+            $(".infostylelist").html(data);
+        });
+        $.get("../../component/information/infohotlist.html", function (data) {
+            $(".infohotlist").html(data);
+        });
+        
     </script>
+    <script type="text/javascript" src="../../../layui-v2.4.5/layui/layui.all.js"></script>
+
+    <script type="text/javascript" src="../../../js/component/information/informationlist.js"></script>
+
 </body>
 
 </html>

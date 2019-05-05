@@ -45,7 +45,7 @@ function getAllTest(pageNo, pageSize){
                           <div class="details">
                               <h3>${data.testlist[i].tname}</h3>
                               <i class="logo"></i>
-                              <i class="creater">创建者：${data.testlist[i].uid}</i>
+                              <i class="creater">创建者：${data.testlist[i].username}</i>
                               <i class="hoti">创建时间：${time}</i>
                           </div>
                       </div>`);

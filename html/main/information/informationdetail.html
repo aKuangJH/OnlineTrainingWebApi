@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>帖子详情页</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="../../../layui-v2.4.5/layui/css/layui.css" rel="stylesheet" type="text/css" />
+    <link href="../../../css/component/information/infolist.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="headpart"></div>
+    <div class="contentpart"></div>
+
+    <script type="text/javascript" src="../../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/common/common.js"></script>
+
+    <script>
+        $.get("../../component/top.html", function (data) {
+            $(".headpart").html(data);
+        });
+        $.get("../../component/information/infodetail.html", function (data) {
+            $(".contentpart").html(data);
+        });
+        
+    </script>
+    <script type="text/javascript" src="../../../layui-v2.4.5/layui/layui.all.js"></script>
+
+    <script type="text/javascript" src="../../../js/component/information/informationlist.js"></script>
+
+</body>
+
+</html>
