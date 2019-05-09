@@ -4,30 +4,62 @@
 <head>
     <title>帖子详情页</title>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="../../../layui-v2.4.5/layui/css/layui.css" rel="stylesheet" type="text/css" />
-    <link href="../../../css/component/information/infolist.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="../../../css/component/information/infolist.css" rel="stylesheet" type="text/css" /> -->
 
 </head>
 
 <body>
-    <div class="headpart"></div>
+    <div class="headpart">
+        <div class="layui-layout layui-layout-admin">
+            <div class="layui-header">
+                <div class="layui-logo"><a href="../../main/index/index.html">OnlineTrainingSystem</a></div>
+
+                <ul class="layui-nav layui-layout-right">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;" class="usermsg">
+                            <img src="#" class="layui-nav-img">
+                            <span>用户名</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="../../manage/foruser/usermessage.html">信息管理</a>
+                            </dd>
+                            <dd>
+                                <a href="#">考试记录</a>
+                            </dd>
+                            <dd>
+                                <a href="../../manage/foruser/inforhistory.html">历史浏览</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../login/login.html" class="quit">注销</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="contentpart"></div>
+    <div class="comments"></div>
 
     <script type="text/javascript" src="../../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/component/top.js"></script>
     <script src="../../../js/common/common.js"></script>
 
     <script>
-        $.get("../../component/top.html", function (data) {
-            $(".headpart").html(data);
-        });
+        // $.get("../../component/top.html", function (data) {
+        //     $(".headpart").html(data);
+        // });
         $.get("../../component/information/infodetail.html", function (data) {
             $(".contentpart").html(data);
         });
-        
+        $.get("../../component/comments.html", function (data) {
+            $(".comments").html(data);
+        });
     </script>
     <script type="text/javascript" src="../../../layui-v2.4.5/layui/layui.all.js"></script>
-
     <script type="text/javascript" src="../../../js/component/information/informationlist.js"></script>
 
 </body>

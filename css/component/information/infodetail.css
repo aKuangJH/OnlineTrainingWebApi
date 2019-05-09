@@ -4,7 +4,7 @@
 }
 #title {
     text-align: center;
-    border-bottom: 1px solid #000;
+    /* border-bottom: 1px solid #000; */
 }
 #provider {
     text-align: right;
@@ -22,4 +22,16 @@
     margin: 30px auto;
     /* border: 1px solid #000; */
     line-height: 30px;
+}
+.headpart {
+    height: 50px;
+    /* border: 1px solid #000; */
+}
+.contentpart {
+    width: 80%;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    height: auto;
+    /* border: 1px solid red; */
 }

@@ -57,7 +57,8 @@ function getstyleinfo(){
         
         // 监听行单击事件
         table.on('row(test)', function (obj) {
-           window.location.href = "http://train.online.com/html/main/information/informationdetail.html?infoid="+obj.data.infoid;
+            addhistory(obj.data.infoid);
+            window.location.href = "http://train.online.com/html/main/information/informationdetail.html?infoid="+obj.data.infoid;
         });
     
         // //监听行双击事件
@@ -103,5 +104,24 @@ function gethotinfo(){
     });
 }
     
+function addhistory(infoid){
 
+    let param ={"infoid":infoid};
+    $.ajax({
+        dataType: "json",
+        type: "GET",
+        data: param,
+        url: "http://train.online.com/server/history/addinfohistory",
+        // data: param,
+        success: function (data) {
+            //根据返回值类型确定状态
+            switch (data.code) {
+                case 0:
+                    break;
+                case 1:
+                    break;
+            };
+        }
+    })
+}
     

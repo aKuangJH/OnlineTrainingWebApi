@@ -6,6 +6,7 @@ $(function(){
     getinformationdetail();
 })
 
+
 function getinformationdetail(){
     let param = {"infoid":infoid};
     $.ajax({
@@ -30,3 +31,4 @@ function getinformationdetail(){
         }
     })
 }
+
