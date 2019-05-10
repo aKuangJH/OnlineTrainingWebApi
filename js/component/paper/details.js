@@ -242,17 +242,6 @@
         $('.choose .yes').click(function(){
             //点击确认时，发送数据cache
             // alert('提交');
-            $.ajax({
-                type: 'post',
-                url: 'http://train.online.com/server/answer/loganswer',
-                dataType: 'json',
-                error: function(XmlHttpRequest, textStatus, errorThrown) {
-                    console.log("传递数据失败!");
-                },
-                success: function(data) {
-
-                }
-            })
             $('.alertwrap').css({
                 display:'none'
             });
@@ -260,7 +249,22 @@
                 display:'none'
             });
             $.ajax({
+                type: 'post',
+                url: 'http://train.online.com/server/answer/loganswer',
+                dataType: 'json',
+                data:{cache},
+                error: function(XmlHttpRequest, textStatus, errorThrown) {
+                    console.log("传递数据失败!");
+                },
+                success: function(data) {
+                    if(data){
+                        window.open('','_blank');
+                        alert('提交成功');
+                    }else{
+                        alert('failed');
+                    }
 
+                }
             })
         });
     }
