@@ -49,6 +49,9 @@ function getAllTest(pageNo, pageSize){
                               <i class="hoti">创建时间：${time}</i>
                           </div>
                       </div>`);
+                      $('.paperlist .item').click(function(){
+                          // 获取item的id传递给试题详情页
+                      });
                     }
                   break;
                 case 1:
