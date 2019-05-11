@@ -128,9 +128,14 @@
             $('.list li').each(function(){
                 var a = $(this).children('.answer').children('a');
                 var span = $(this).children('.answer').children('span');
-                if(a.length!=0 && a.find('pre').css({'color':"#25bb9b"})){
-                    //选择
-                    answerArr.push(a.id.charAt(a.id.length-1));
+
+                if(a.length!=0){
+                    a.each(function(){
+                        if($(this).find('pre').css({'color':"#25bb9b"})){
+                            //选择
+                            answerArr.push($(this).find('pre').parent().parent('a').attr("id").slice(-1));
+                        }
+                    })
                 }else if(a.length==0&&span.length==1){
                     //填空
                     answerArr.push($('.blankanswer').value);
