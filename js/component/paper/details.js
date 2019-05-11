@@ -58,10 +58,7 @@
                                             });
                                             $(this).siblings().find('pre').css({
                                                 color:'#333'
-                                            });
-                                            //存入cache
-                                            cache.tid=GetQueryString("tid");
-                                            answerArr.push($(this).id.charAt($(this).id.length-1));
+                                            });                                           
                                         }
 
                                         U.append(icon,choose);
@@ -78,18 +75,14 @@
                                     <input type="text" id='blank_${data.questionlist[i].qid}' class="blankanswer"/>`
                                     //存入cache
                                     cache.tid=GetQueryString("tid");
-                                    answerArr.push($('.blankanswer').value);
                                     
                                 }
                                 U.append(oLi,q);
                                 U.append(oLi,Awrap);  
                                 U.append(list,oLi);
-                                for (index in answerArr) {
-                                    answerObj[index] = answerArr[index];
-                                }
+                                
                             }                            
                         }
-                        cache.answer=JSON.stringify(answerObj);
                         
                       break;
                     case 1:
@@ -131,6 +124,24 @@
             $('.alert').css({
                 display:'none'
             });
+            // 存入cache
+            $('.list li').each(function(){
+                var a = $(this).children('.answer').children('a');
+                var span = $(this).children('.answer').children('span');
+                if(a.length!=0 && a.find('pre').css({'color':"#25bb9b"})){
+                    //选择
+                    answerArr.push(a.id.charAt(a.id.length-1));
+                }else if(a.length==0&&span.length==1){
+                    //填空
+                    answerArr.push($('.blankanswer').value);
+                }
+            });
+
+            for (index in answerArr) {
+                answerObj[index] = answerArr[index];
+            }
+            cache.answer=JSON.stringify(answerObj);
+
             $.ajax({
                 type: 'post',
                 url: 'http://train.online.com/server/answer/loganswer',
