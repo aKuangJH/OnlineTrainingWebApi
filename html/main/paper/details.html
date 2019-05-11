@@ -45,12 +45,8 @@
     <!-- 头部 -->
     <div class="header"></div>
     <!-- 试题详情 -->
-    <div class="choice">
-        <div class="type">[选择题]</div>
-        <ul class="list"></ul>
-    </div>
-    <div class="blank">
-        <div class="type">[填空题]</div>
+    <div class="problems">
+        <div class="type"></div>
         <ul class="list"></ul>
     </div>
     <div class="submit">
@@ -59,6 +55,7 @@
     <div class="alertwrap">
         <div class="alert">
             <p>现在就要交卷吗？</p>
+            <span class="icon-close"></span>
             <div class="choose">
                 <a href="javascript:;" class="no">我再检查一下</a>
                 <a href="javascript:;" class="yes">确认交卷</a>
@@ -66,7 +63,8 @@
         </div>
     </div>
     <script src="../../../js/common/base.js"></script>
-    <script src="../../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/common/common.js"></script>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
     <script src="../../../layui-v2.4.5/layui/layui.all.js"></script>
     <script src="../../../js/common/common.js"></script>
     <script src="../../../js/component/paper/details.js"></script>
