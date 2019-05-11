@@ -47,12 +47,12 @@
                                         choose.className = 'choose';
                                         var inp = U.create("input");
                                         var pre = U.create('pre');
-                                        pre.innerHTML = `${data.questionlist[i].options[j]}`;
-                                        inp.setAttribute('type', 'radio');
-                                        inp.setAttribute('checked', 'checked');
-                                        inp.name = `choice_${data.questionlist[i].qid}`;
-                                        As.status = 1;
-                                        As.onclick = function () {
+                                        pre.innerHTML=`${data.questionlist[i].options[j]}`;
+                                        inp.setAttribute('type','radio');
+                                        inp.setAttribute('checked','checked');
+                                        inp.name=`choiceinp_${data.questionlist[i].qid}_${j}`;
+                                        As.status = 1; 
+                                        As.onclick=function(){
                                             $(this).find('.choose').css({
                                                 display: 'inline-block'
                                             });
@@ -138,16 +138,15 @@
 
                 if(a.length!=0){
                     a.each(function(i,ele){
-                        if($(this).find('pre').css({'color':"#25bb9b"})){
+                        if($(this).find('pre').css('color')=="rgb(37, 187, 155)"){
                             //选择
-                            console.log("答案："+i+"==="+$(this).find('pre').parent().parent('a').attr("id").slice(-1))
-                            answerArr.push($(this).find('pre').parent().parent('a').attr("id").slice(-1));
+                            console.log("答案"+i+$(this).find('pre').siblings('input').attr("name"));
+                            answerArr.push($(this).find('pre').siblings('input').attr("name").slice(-1));
                         }
                     })
                 }else if(a.length==0&&span.length==1){
                     //填空
-                    console.log($('.blankanswer').value)
-                    answerArr.push($('.blankanswer').value);
+                    answerArr.push($('.blankanswer').val());
                 }
             });
             for (index in answerArr) {
@@ -156,12 +155,12 @@
             console.log(JSON.stringify(answerObj))
 
             cache.answer = JSON.stringify(answerObj);
-
+            let params = {"tid":tid,"answer":cache.answer};
             $.ajax({
                 type: 'post',
                 url: 'http://train.online.com/server/answer/loganswer',
                 dataType: 'json',
-                data: { cache },
+                data: params,
                 error: function (XmlHttpRequest, textStatus, errorThrown) {
                     console.log("传递数据失败!");
                 },
