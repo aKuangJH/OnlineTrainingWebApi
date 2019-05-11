@@ -44,7 +44,7 @@
                                         pre.innerHTML=`${data.questionlist[i].options[j]}`;
                                         inp.setAttribute('type','radio');
                                         inp.setAttribute('checked','checked');
-                                        inp.name=`choice_${data.questionlist[i].qid}`;
+                                        inp.name=`choiceinp_${data.questionlist[i].qid}_${j}`;
                                         As.status = 1; 
                                         As.onclick=function(){
                                             $(this).find('.choose').css({
@@ -133,7 +133,8 @@
                     a.each(function(){
                         if($(this).find('pre').css({'color':"#25bb9b"})){
                             //选择
-                            answerArr.push($(this).find('pre').parent().parent('a').attr("id").slice(-1));
+                            console.log($(this).find('pre').siblings('input').attr("name"));
+                            answerArr.push($(this).find('pre').siblings('input').attr("name").slice(-1));
                         }
                     })
                 }else if(a.length==0&&span.length==1){
