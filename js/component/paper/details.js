@@ -24,7 +24,13 @@
                         var problems = document.getElementsByClassName('problems')[0];
                         var list = problems.getElementsByClassName('list')[0];
                         if(data.questionlist.length!=0){
-                            
+                            var oLi = U.create('li');
+                            var q = U.create('div');
+                            oLi.index=i;
+                            q.className='question';
+                            q.innerHTML=`<span class="index">${i+1}.</span>${data.questionlist[i].qtitle}`;
+                            var Awrap = U.create('div');
+                            Awrap.className='answer';
                             if(data.questionlist[i].qstyle==0){
                                 //选择
                                 $('.type').innertext=`[选择题]`;
