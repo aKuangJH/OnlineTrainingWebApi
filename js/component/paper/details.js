@@ -23,24 +23,17 @@
                     case 0:
                         var problems = document.getElementsByClassName('problems')[0];
                         var list = problems.getElementsByClassName('list')[0];
-                        if(data.questionlist.length!=0){
-                            var oLi = U.create('li');
-                            var q = U.create('div');
-                            oLi.index=i;
-                            q.className='question';
-                            q.innerHTML=`<span class="index">${i+1}.</span>${data.questionlist[i].qtitle}`;
-                            var Awrap = U.create('div');
-                            Awrap.className='answer';
-                            if(data.questionlist[i].qstyle==0){
-                                //选择
-                                $('.type').innertext=`[选择题]`;
-                                for(var i=0;i<data.questionlist.length;i++){
-                                    var oLi = U.create('li');
-                                    var q = U.create('div');
-                                    q.className='question';
-                                    q.innerHTML=`<span class="index">${i+1}.</span>${blankData[i].qtitle}`;
-                                    var Awrap = U.create('div');
-                                    Awrap.className='answer';
+                        if(data.questionlist.length!=0){                            
+                            for(var i=0;i<data.questionlist.length;i++){
+                                var oLi = U.create('li');
+                                var q = U.create('div');
+                                q.className='question';
+                                q.innerHTML=`<span class="index">${i+1}.</span>${data.questionlist[i].qtitle}`;
+                                var Awrap = U.create('div');
+                                Awrap.className='answer';
+                                if(data.questionlist[i].qstyle==0){
+                                    //选择
+                                    $('.type').innertext=`[选择题]`;
                                     for(var j in data.questionlist[i].options){
                                         var As = U.create('a');
                                         As.setAttribute('href','javascript:void(0);');
@@ -84,32 +77,23 @@
                                         U.append(As,Alabel);
                                         U.append(Awrap,As);
                                     }
-                                    
-                                }
-                            }else if(data.questionlist[i].qstyle==1){
-                                //填空
-                                $('.type').innertext=`[填空题]`;
-                                for(var i=0;i<data.questionlist.length;i++){
-                                    var oLi = U.create('li');
-                                    var q = U.create('div');
-                                    q.className='question';
-                                    q.innerHTML=`<span class="index">${i+1}.</span>${blankData[i].qtitle}`;
-                                    var Awrap = U.create('div');
-                                    Awrap.className='answer';
+                                }else if(data.questionlist[i].qstyle==1){
+                                    //填空
+                                    $('.type').innertext=`[填空题]`;
                                     Awrap.innerHTML=`<span>你的回答：</span>
                                     <input type="text" id='blank_${data.questionlist[i].qid}' class="blankanswer"/>`
-                                     //存入cache
-                                     cache.tid=GetQueryString("tid");
-                                     answerArr.push($('.blankanswer').value);
-                                 }
-                            }
-                            U.append(oLi,q);
-                            U.append(oLi,Awrap);  
-                            U.append(list,oLi);
-
-                            for (index in answerArr) {
-                                answerObj[index] = answerArr[index];
-                            }
+                                    //存入cache
+                                    cache.tid=GetQueryString("tid");
+                                    answerArr.push($('.blankanswer').value);
+                                    
+                                }
+                                U.append(oLi,q);
+                                U.append(oLi,Awrap);  
+                                U.append(list,oLi);
+                                for (index in answerArr) {
+                                    answerObj[index] = answerArr[index];
+                                }
+                            }                            
                         }
                         cache.answer=JSON.stringify(answerObj);
                         
