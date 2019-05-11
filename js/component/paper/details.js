@@ -29,7 +29,12 @@
                                 //选择
                                 $('.type').innertext=`[选择题]`;
                                 for(var i=0;i<data.questionlist.length;i++){
-
+                                    var oLi = U.create('li');
+                                    var q = U.create('div');
+                                    q.className='question';
+                                    q.innerHTML=`<span class="index">${i+1}.</span>${blankData[i].qtitle}`;
+                                    var Awrap = U.create('div');
+                                    Awrap.className='answer';
                                     for(var j in data.questionlist[i].options){
                                         var As = U.create('a');
                                         As.setAttribute('href','javascript:void(0);');
@@ -79,6 +84,12 @@
                                 //填空
                                 $('.type').innertext=`[填空题]`;
                                 for(var i=0;i<data.questionlist.length;i++){
+                                    var oLi = U.create('li');
+                                    var q = U.create('div');
+                                    q.className='question';
+                                    q.innerHTML=`<span class="index">${i+1}.</span>${blankData[i].qtitle}`;
+                                    var Awrap = U.create('div');
+                                    Awrap.className='answer';
                                     Awrap.innerHTML=`<span>你的回答：</span>
                                     <input type="text" id='blank_${data.questionlist[i].qid}' class="blankanswer"/>`
                                      //存入cache
