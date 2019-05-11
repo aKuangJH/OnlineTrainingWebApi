@@ -1,0 +1,160 @@
+body{
+    margin: 0 auto;
+    background: #eee;
+    color:#333;
+}
+.usericon{
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 16px;
+    background: url(../../../img/component/icon-b.png) no-repeat;
+    background-size: 32px 32px;
+    display: block;
+}
+.msg{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+}
+.msg .time{
+    flex: 1;
+}
+.msg .grade{
+    flex: 1;
+}
+/* 选择 */
+.problems{
+    width: 80%;
+    margin: 0 auto;
+}
+.problems .type{
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px #d4d4d4 solid;
+}
+.problems .list{
+    width: 100%;
+    background: #fff;
+
+}
+.list li .question{
+    width: 90%;
+    padding-top: 10px;
+    padding-left: 5%;
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+}
+.list li .answer{
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 5%;
+    padding-bottom: 10px;
+}
+.options{
+    margin-bottom: 20px;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    padding: 12px 20px 13px;
+    display: block;
+    word-break: break-all;
+}
+.options:last-child{
+    margin-bottom: 10px;
+}
+.options:hover{
+    background: #f3f3f3;
+    text-decoration: none;
+    border-color: #909090;
+    color: #25bb9b;
+}
+.options .radio {
+    margin: 0;
+    line-height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+    display: inline-block;
+}
+.options .radio .icons {
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    vertical-align: -5px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    display: inline-block;
+    margin-right: 3px;
+    line-height: normal;
+    position: relative;
+    margin-bottom: 2px;
+}
+.radio .choose{
+    border-radius: 50%;
+    background: #25bb9b;
+    width: 8px;
+    height: 8px;
+    display: none;
+    vertical-align: middle;
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+}
+.options .radio .icons+input{
+    display: none;
+}
+.selected{
+    border-color: #1abc9c;
+    background: #fff;
+}
+label.radio pre {
+    display: inline-block;
+    vertical-align: top;
+    color: #333;
+    max-width: 850px;
+    padding: 0;
+    margin: 0;
+    background: 0 0;
+    border: none;
+    font-size: 16px;
+}
+/* 填空题 */
+.problems{
+    width: 80%;
+    margin: 10px auto 0;
+}
+.problems .type{
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px #d4d4d4 solid;
+}
+.problems .list{
+    width: 100%;
+    background: #fff;
+}
+.answer span{
+    font-size: 16px;
+}
+.answer .blankanswer{
+    width: 70%;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    text-indent: 3px;
+    border:0px;
+    border-bottom: 1px solid #909090;
+}
+

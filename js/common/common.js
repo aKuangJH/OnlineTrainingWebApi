@@ -74,3 +74,11 @@ function getObjectURL(file) {
 	}
 	return url;
 }
+// obj对象转数组方法
+function transformObjToArr(obj){
+	var arr = [];
+	for(var item in obj){
+		arr.push(obj[item]);
+	}
+	return arr;
+}
