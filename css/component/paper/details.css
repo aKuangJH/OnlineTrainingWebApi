@@ -13,11 +13,11 @@ body{
     display: block;
 }
 /* 选择 */
-.choice{
+.problems{
     width: 80%;
     margin: 10px auto;
 }
-.choice .type{
+.problems .type{
     width: 100%;
     padding-left: 20px;
     box-sizing: border-box;
@@ -26,7 +26,7 @@ body{
     line-height: 40px;
     border-bottom: 1px #d4d4d4 solid;
 }
-.choice .list{
+.problems .list{
     width: 100%;
     background: #fff;
 
@@ -115,11 +115,11 @@ label.radio pre {
     font-size: 16px;
 }
 /* 填空题 */
-.blank{
+.problems{
     width: 80%;
     margin: 10px auto 0;
 }
-.blank .type{
+.problems .type{
     width: 100%;
     padding-left: 20px;
     box-sizing: border-box;
@@ -128,7 +128,7 @@ label.radio pre {
     line-height: 40px;
     border-bottom: 1px #d4d4d4 solid;
 }
-.blank .list{
+.problems .list{
     width: 100%;
     background: #fff;
 }
