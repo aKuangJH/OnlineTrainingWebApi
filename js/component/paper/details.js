@@ -137,6 +137,9 @@
             $('.alert').css({
                 display:'none'
             });
+            // let ss = JSON.stringify({cache});
+            
+            // console.log(ss)
             $.ajax({
                 type: 'post',
                 url: 'http://train.online.com/server/answer/loganswer',

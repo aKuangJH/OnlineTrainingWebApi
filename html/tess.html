@@ -1,16 +1,20 @@
 <div>
     <ul class="bb">
         <li>
-            <input id="uu" type="radio" value="aa">
-            <input id="uu" type="radio" value="bb" checked>
-            <input id="uu" type="radio" value="cc">
+            <input id="uu" name="haha" type="radio" value="aa">
+            <input id="uu" name="haha" type="radio" value="bb">
+            <input id="uu" name="haha" type="radio" value="cc">
         </li>
         <li><input id="uu" type="radio" value="bb" checked></li>
         <li><input id="uu" type="radio" value="cc"></li>
     </ul>
+    <input type="button" id="yy" value="ok">
 </div>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script>
-let kk = $(".bb li").eq(0).children("#uu:checked").val();
+$("#yy").click(function(){
+    let kk = $(".bb li").eq(0).children("#uu:checked").val();
 alert(kk)
+})
+
 </script>
