@@ -277,6 +277,13 @@
     background: #33b08a;
     color: #fff;
 }
+.bbstitle .jump {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    color: #888888;
+    float: right;
+}
 .bbscontent{
     overflow: hidden;
     display: flex;

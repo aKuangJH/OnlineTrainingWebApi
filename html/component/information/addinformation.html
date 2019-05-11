@@ -1,0 +1,37 @@
+<link href="../../../css/component/information/addinformation.css" rel="stylesheet" type="text/css" />
+<!-- <link href="../../../layui-v2.4.5/layui/css/layui.css" rel="stylesheet" type="text/css" /> -->
+<!-- <script src="../../../layui-v2.4.5/layui/layui.all.js"></script> -->
+
+<div class="addinfoframe">
+    <div class="additem">
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类:</label>
+            <select id="infostyle" lay-verify="">
+                <option value="1">数据库</option>
+                <option value="2">JAVA</option>
+                <option value="3">JavaScript</option>
+                <option value="4">HTML</option>
+                <option value="5">CSS</option>
+                <option value="6">Node.js</option>
+                <option value="7">插件</option>
+            </select>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题:</label>
+            <div class="layui-input-block">
+                <input type="text" id="infotitle" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">内容:</label>
+            <div class="layui-input-block">
+                <textarea name="" required lay-verify="required" id="infocontent" placeholder="请编写。。。。。。" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <button class="layui-btn" id="addinfo">立即发表</button>
+        </div>
+
+    </div>
+</div>
+<script src="../../../js/component/information/addinformation.js"></script>

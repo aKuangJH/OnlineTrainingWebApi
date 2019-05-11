@@ -4,6 +4,7 @@ $(function(){
         infoid = GetQueryString("infoid");
     }
     getinformationdetail();
+    addhistory();
 })
 
 
@@ -26,6 +27,27 @@ function getinformationdetail(){
                     break;
                 case 1:
                     layer.msg('获取失败，请刷新');
+                    break;
+            };
+        }
+    })
+}
+
+function addhistory(){
+
+    let param ={"infoid":infoid};
+    $.ajax({
+        dataType: "json",
+        type: "GET",
+        data: param,
+        url: "http://train.online.com/server/history/addinfohistory",
+        // data: param,
+        success: function (data) {
+            //根据返回值类型确定状态
+            switch (data.code) {
+                case 0:
+                    break;
+                case 1:
                     break;
             };
         }

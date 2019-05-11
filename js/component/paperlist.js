@@ -21,6 +21,11 @@ function pageHelper(dataCount){
     });
 }
 
+
+function jumptestdetail(tid){
+    window.location.href = "http://train.online.com/html/main/paper/details.html?tid="+tid;
+}
+
 function getAllTest(pageNo, pageSize){
     let params = {"pageNo":pageNo,"pageSize":pageSize};
     $.ajax({
@@ -41,7 +46,7 @@ function getAllTest(pageNo, pageSize){
                     for(var i=0;i<data.testlist.length;i++){
                       var time = parseTime(`${data.testlist[i].createtime}`);
                       $('.paperlist').append(`
-                      <div class="item">
+                      <div class="item" onclick='jumptestdetail(${data.testlist[i].tid})'>
                           <div class="details">
                               <h3>${data.testlist[i].tname}</h3>
                               <i class="logo"></i>

@@ -3,9 +3,22 @@ var type = 0;
 var dataCount = 0;
 $(function () {
     // getTotalCount(type)?pageHelper(type,dataCount):pageHelper(type,dataCount);
-    getTotalCount(type);
+    // getTotalCount(type);
     // getalltest(0,1,12);
     pageHelper(type, dataCount);
+
+    $(".type0").click(function(){
+        type = 0;
+        pageHelper(type, dataCount);
+    })
+    $(".type1").click(function(){
+        type = 1;
+        pageHelper(type, dataCount);
+    })
+    $(".type2").click(function(){
+        type = 2;
+        pageHelper(type, dataCount);
+    })
 })
 
 // 分页
@@ -66,20 +79,36 @@ function getalltest(type, pageNo, pageSize) {
                     dataCount = data.count;
                     // 清空html
                     $("tbody").html("")
-                    for (let i = 0; i < data.testlist.length; i++) {
-                        //数据处理
-                        let authority = handleAuthority(data.testlist[i].testauthority);
-
-                        $("tbody").append("<tr>" +
-                            "<td>" + data.testlist[i].tid + "</td >" +
-                            "<td>" + data.testlist[i].tname + "</td>" +
-                            "<td>" + data.testlist[i].status + "</td>" +
-                            "<td>" + authority + "</td>" +
-                            "<td>" + data.testlist[i].createtime + "</td>" +
-                            "<td>" + data.testlist[i].answercount + "</td>" +
-                            "<td><button class='layui-btn layui-btn-sm' onclick='deleteTest("+data.testlist[i].tid+")'>删除</button></td>" +
-                            "</tr >")
+                    if(type == 0){
+                        for (let i = 0; i < data.testlist.length; i++) {
+                            //数据处理
+                            let authority = handleAuthority(data.testlist[i].testauthority);
+                            $("tbody").append("<tr>" +
+                                "<td>" + data.testlist[i].tid + "</td >" +
+                                "<td>" + data.testlist[i].tname + "</td>" +
+                                "<td>" + data.testlist[i].status + "</td>" +
+                                "<td>" + authority + "</td>" +
+                                "<td>" + data.testlist[i].createtime + "</td>" +
+                                "<td>" + data.testlist[i].answercount + "</td>" +
+                                "<td><button class='layui-btn layui-btn-sm' onclick='deleteTest("+data.testlist[i].tid+")'>删除</button></td>" +
+                                "</tr >")
+                        }
+                    }else{
+                        for (let i = 0; i < data.testlist.length; i++) {
+                            //数据处理
+                            let authority = handleAuthority(data.testlist[i].testauthority);
+                            $("tbody").append("<tr>" +
+                                "<td>" + data.testlist[i].tid + "</td >" +
+                                "<td>" + data.testlist[i].tname + "</td>" +
+                                "<td>" + data.testlist[i].status + "</td>" +
+                                "<td>" + authority + "</td>" +
+                                "<td>" + data.testlist[i].createtime + "</td>" +
+                                "<td>" + data.testlist[i].answercount + "</td>" +
+                                "<td><button class='layui-btn layui-btn-sm' onclick='changetype("+data.testlist[i].tid+")'>审核</button></td>" +
+                                "</tr >")
+                        }
                     }
+                   
                     break;
                 case 1:
                     layer.msg('获取失败，请重新操作！');
@@ -133,4 +162,31 @@ function deleteTest(tid) {
 
     });
 
+}
+
+function changetype(tid){
+    let t = 0;
+    if(type == 1){
+        t = 1;
+    }
+    let params = {"tid":tid,"type":t};
+    $.ajax({
+        async: false,
+        dataType: "json",
+        type: "GET",
+        url: "http://train.online.com/server/test/changetype",
+        data: params,
+        success: function (data) {
+            //根据返回值类型确定状态
+            switch (data.code) {
+                case 0:
+                    layer.msg('成功')
+                    window.location.reload();
+                    break;
+                case 1:
+                    layer.msg('失败，请重新操作！');
+                    break;
+            };
+        }
+    })
 }

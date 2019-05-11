@@ -1,0 +1,18 @@
+.additem {
+    box-shadow: 0 0 10px 2px #bbbbbb;
+    padding: 20px;
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+#addinfo {
+    margin-left: auto;
+    margin-right: auto;
+    float: right;
+}
+.layui-btn {
+    margin-top: 20px;
+    margin-left: 20px;
+}

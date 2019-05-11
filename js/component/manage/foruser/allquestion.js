@@ -77,12 +77,12 @@ function updateselect(obj, qid) {
 
 	let param = { "A": optionA, "B": optionB, "C": optionC, "D": optionD };
 	let options = JSON.stringify(param);
-	let params = { "qid": qid, "tid": tid, "qstyle": "0", "qanswer": qanswer, "options": options };
+	let params = { "qtitle": qtitle,"qid": qid, "tid": tid, "qstyle": "0", "qanswer": qanswer, "options": options };
 	$.ajax({
 		dataType: "json",
 		type: "GET",
 		url: "http://train.online.com/server/question/updatequestion",
-		data: param,
+		data: params,
 		success: function (data) {
 			//根据返回值类型确定状态
 			switch (data.code) {
@@ -259,10 +259,11 @@ function showallquestions() {
 						}
 					}
 					if (data.questionlist.length < 10) {
-						layer.open({
-							title: '提示'
-							, content: ' 当前试题数不足十，请录入！'
-						});
+						layer.msg("当前试题数不足十，请录入！")
+						// layer.open({
+						// 	title: '提示'
+						// 	, content: ' 当前试题数不足十，请录入！'
+						// });
 					}
 					// 样式状态
 					$(".rightbtn").hover(function () {

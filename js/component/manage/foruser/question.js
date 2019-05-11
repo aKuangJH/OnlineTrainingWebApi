@@ -50,8 +50,8 @@ function addquestion(){
 						case 0:
 							layer.msg("录入成功！");	
 							setTimeout(function(){ 
-								window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
-							}, 2000);				
+								window.location.href = "http://train.online.com/html/manage/foruser/showquestions.html?tid="+tid;
+							}, 0);				
 							break;
 						case 1:
 							layer.msg('录入失败，请重新录入！');
@@ -59,7 +59,7 @@ function addquestion(){
 						case 2:
 							layer.msg('试题数已满！');	
 							setTimeout(function(){ 
-								window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+								window.location.href = "http://train.online.com/html/manage/foruser/showquestions.html?tid="+tid;
 							}, 2000);
 					};
 				}
@@ -79,8 +79,8 @@ function addquestion(){
 						case 0:
 						layer.msg("录入成功！");
 						setTimeout(function(){ 
-							window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
-						}, 2000);
+							window.location.href = "http://train.online.com/html/manage/foruser/showquestions.html?tid="+tid;
+						}, 0);
 							break;
 						case 1:
 							layer.msg('录入失败，请重新录入！');
@@ -88,7 +88,7 @@ function addquestion(){
 						case 2:
 							layer.msg('试题数已满！');	
 							setTimeout(function(){ 
-								window.location.href = "http://train.online.com/html/manage/showquestions.html?tid="+tid;
+								window.location.href = "http://train.online.com/html/manage/foruser/showquestions.html?tid="+tid;
 							}, 2000);
 							break;
 					};

@@ -1,9 +1,13 @@
-(
+(   
+   
     function(){
+        let tid = GetQueryString('tid');
+        let param = {"tid":tid};
         $.ajax({
             type: 'post',
-            url: 'http://train.online.com/server/question/showallquestions?tid=1',
+            url: 'http://train.online.com/server/question/showallquestions',
             dataType: 'json',
+            data:param,
             error: function(XmlHttpRequest, textStatus, errorThrown) {
                 console.log("操作失败!");
             },
@@ -36,7 +40,8 @@
                                 for(var j in choiceData[i].options){
                                     var As = U.create('a');
                                     As.setAttribute('href','javascript:void(0);');
-                                    As.setAttribute('id',`choice_${choiceData[i].qid}_${j}`);
+                                    As.setAttribute('id',`${choiceData[i].qid}`);
+                                    As.setAttribute('value',`${j}`);
                                     As.className='options';
                                     var Alabel = U.create('label');
                                     Alabel.className='radio';         
@@ -48,8 +53,10 @@
                                     var pre = U.create('pre');
                                     pre.innerHTML=`${choiceData[i].options[j]}`;
                                     inp.setAttribute('type','radio');
-                                    inp.setAttribute('checked','checked');
+                                    inp.setAttribute('id','radiogroup');
+                                    // inp.setAttribute('checked','checked');
                                     inp.name=`choice_${choiceData[i].qid}`;
+                                    inp.setAttribute('value',`${j}`)
                                     As.status = 1; 
                                     As.onclick=function(){
                                         $(this).find('.choose').css({
@@ -126,9 +133,56 @@
                 display:'block'
             });
         })
+
+        $('.alert .no').click(function(){
+            $('.alertwrap').css({
+                display:''
+            });
+            $('.alert').css({
+                display:''
+            });
+        })
+
+        $('.alert .yes').click(function(){
+            let qanswerli = $(".choice .list li");
+            let tanswerli = $(".blank .list li");
+
+            alert($(".choice .list li").eq(0).children("#radiogroup:checked").val());
+            // for(let i=0;i<qanswerli.length;i++){
+            //     let a = $(".choice .list li")
+            // }
+
         
-
-
-
+            // for(let i=0;i<qanswerli.length;i++){
+            //     console.log(qans)
+            // }
+            // $.ajax({
+            //     dataType: "json",
+            //     type: "GET",
+            //     url: "http://train.online.com/server/history/deleteinfohistory",
+            //     data: param,
+            //     success: function (data) {
+            //         //根据返回值类型确定状态
+            //         switch (data.code) {
+            //             case 0:
+            //                 // 关闭弹层	
+            //                 layer.close(layer.index);
+            //                 layer.msg("删除成功！");
+            //                 // obj.del();
+            //                 setTimeout(function () {
+            //                     window.location.reload();
+            //                 }, 500);
+            //                 break;
+            //             case 1:
+            //                 // 关闭弹层	
+            //                 layer.close(layer.index);
+            //                 layer.msg('删除失败，请重新操作！');
+            //                 break;
+            //         };
+            //     }
+            // })
+        })
+        
+        
     }
 )();

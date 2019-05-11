@@ -1,7 +1,7 @@
 var dataCount = 0;
 var path = "../../../img/headpic/";
 $(function () {
-	getallcomments(1,1);
+	getallcomments(1,10);
 	pageHelper();
 
 	$("#addcontent").click(function () {
@@ -41,6 +41,7 @@ function getallcomments(pageNo, pageSize) {
 				case 0:
 					dataCount = data.count;
 					// alert(dataCount);
+					$(".commentlist").html("");
 					for(let i=0;i<data.comments.length;i++){
 						$(".commentlist").append("<div class='comment'>" +
 						"<div class='uimg'>" +
@@ -57,7 +58,7 @@ function getallcomments(pageNo, pageSize) {
 					}
 					break;
 				case 1:
-					layer.msg('获取失败，请刷新');
+					// layer.msg('获取失败，请刷新');
 					break;
 			};
 		}

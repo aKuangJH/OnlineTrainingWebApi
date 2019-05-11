@@ -1,6 +1,25 @@
+var dataCount = 0;
 $(function() {
-	getalltest();
+	getalltest(1,3)
+	pageHelper()
+	// getalltest(1,6);
 });
+
+// 分页
+function pageHelper() {
+    layui.use('laypage', function () {
+        var laypage = layui.laypage;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'pagehelper' //注意，这里ID，不用加 # 号
+            , count: dataCount //数据总数，从服务端得到
+            , limit: 3
+            , jump: function (obj, first) {
+                getalltest(obj.curr,3);
+            }
+        });
+    });
+}
 
 // 查询
 function showquestions(tid){
@@ -13,16 +32,22 @@ function deletetest(tid){
 }
 
 // 获取所有
-function getalltest() {
+function getalltest(pageNo, pageSize) {
+	let params = {"pageNo":pageNo,"pageSize":pageSize}
 	$.ajax({
 		dataType: "json",
 		type: "POST",
 		url: "http://train.online.com/server/test/getalltest",
-		// data: params,
+		data: params,
+		async: false,
 		success: function(data) {
 			//根据返回值类型确定状态
 			switch (data.code) {
 				case 0:
+				$(".testlist").html("");
+				dataCount = data.count;
+
+				// alert("===>"+dataCount)
 				for(let i=0;i<data.testlist.length;i++){
 					$(".testlist").append("<div class='testitem'>"+
 						"<h4 class='testname'><b>"+data.testlist[i].tname+"</b></h4>"+

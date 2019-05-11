@@ -27,7 +27,7 @@ $(function () {
 	}
 
 
-// 登陆逻辑
+	// 登陆逻辑
 	var verifyCode = new GVerify("v_container");
 
 	document.getElementById("login_btn").onclick = function () {
@@ -36,31 +36,7 @@ $(function () {
 			layer.msg("验证正确");
 			var username = $("#u").val();
 			var password = $("#p").val();
-			// alert("用户名：" + username + ",密码：" + password);
-			params = { "username": username, "password": password };
-			$.ajax({
-				dataType: "json",
-				type: "GET",
-				url: "http://train.online.com/server/user/login",
-				data: params,
-				success: function (data) {
-					//根据返回值类型确定状态
-					switch (data.code) {
-						case 0:
-							let role = get_cookie("role");
-							// alert(role)
-							if(role == 1) {
-								window.location.href = "../../manage/foradmin/allinformation.html";
-							}else if(role == 0){
-								window.location.href = "../index/index.html";
-							}
-							break;
-						case 1:
-							layer.msg('登录失败，请重新输入!');
-							break;
-					};
-				}
-			})
+			userlogin(username,password);
 		} else {
 			layer.msg("验证码错误");
 		}
@@ -68,6 +44,35 @@ $(function () {
 
 
 });
+
+function userlogin(username,password) {
+	// alert("用户名：" + username + ",密码：" + password);
+	params = { "username": username, "password": password };
+	$.ajax({
+		dataType: "json",
+		type: "GET",
+		url: "http://train.online.com/server/user/login",
+		data: params,
+		success: function (data) {
+			//根据返回值类型确定状态
+			switch (data.code) {
+				case 0:
+					let role = get_cookie("role");
+					// alert(role)
+					if (role == 1) {
+						window.location.href = "../../manage/foradmin/allinformation.html";
+					} else if (role == 0) {
+						window.location.href = "../index/index.html";
+					}
+					break;
+				case 1:
+					layer.msg('用户名密码错误，请重新输入!');
+					break;
+			};
+		}
+	})
+}
+
 
 function logintab() {
 	scrollTo(0);
@@ -321,28 +326,32 @@ $(document).ready(function () {
 				}, 1500);
 				return false;
 		}
+		let username = $("#user").val();
+		let password = $("#passwd2").val();
+		let email = $("#email").val();
+
+		let params = { "username": username, "password": password, "email": email };
 		$.ajax({
-			type: reMethod,
-			url: "http://127.0.0.1:8083/login/register",
+			type: 'POST',
+			url: "http://train.online.com/server/user/register",
 			data: $('#regUser').serialize(),
 			dataType: 'json',
 			success: function (result) {
-				layer.msg('注册成功');
-
-				setTimeout("window.location.href = './manage/address.html'", 5000);
-
 				//根据返回值类型确定状态
-				switch (data.code) {
+				switch (result.code) {
 					case 0:
 						layer.msg('注册成功');
+						setTimeout(() => {
+							userlogin(username,password);
+						}, 1000);
 						break;
 					case 1:
-						layer.msg('注册失败，请重新操作!');
+						layer.msg('注册失败，可能存在冲突，请更改信息!');
 						break;
 				};
 			}
 		});
-		$('#regUser').submit();
+		// $('#regUser').submit();
 	});
 
 
