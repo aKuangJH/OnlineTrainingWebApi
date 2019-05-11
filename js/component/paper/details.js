@@ -135,26 +135,26 @@
             $('.list li').each(function () {
                 var a = $(this).children('.answer').children('a');
                 var span = $(this).children('.answer').children('span');
-                if (a.length != 0) {
-                    a.each(function (i,ele) {
-                        console.log(i)
-                        if ($(this).find('pre').css({ 'color': "#25bb9b" })) {
-                            console.log("input====>" + JSON.stringify($(this).children('input')));
-                            
+
+                if(a.length!=0){
+                    a.each(function(i,ele){
+                        if($(this).find('pre').css({'color':"#25bb9b"})){
                             //选择
-                            console.log($(this).find('pre').siblings('input').attr("name").slice(-1));
-                            answerArr.push($(this).find('pre').siblings('input').attr("name").slice(-1));
+                            console.log("答案："+i+"==="+$(this).find('pre').parent().parent('a').attr("id").slice(-1))
+                            answerArr.push($(this).find('pre').parent().parent('a').attr("id").slice(-1));
                         }
                     })
-                } else if (a.length == 0 && span.length == 1) {
+                }else if(a.length==0&&span.length==1){
                     //填空
+                    console.log($('.blankanswer').value)
                     answerArr.push($('.blankanswer').value);
                 }
             });
-
             for (index in answerArr) {
                 answerObj[index] = answerArr[index];
             }
+            console.log(JSON.stringify(answerObj))
+
             cache.answer = JSON.stringify(answerObj);
 
             $.ajax({
