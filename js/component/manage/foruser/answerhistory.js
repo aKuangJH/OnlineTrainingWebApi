@@ -54,6 +54,6 @@ function getanswerhistory(pageNo,pageSize){
 }
 
 function showmeanswer(tid,aid,gid){
-    alert(tid+","+aid+","+gid);
-
+    // alert(tid+","+aid+","+gid);
+    window.location.href = "http://train.online.com/html/main/paper/questionresult.html?tid="+tid+"&aid="+aid+"&gid="+gid;
 }

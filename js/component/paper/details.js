@@ -165,7 +165,7 @@
                 },
                 success: function (data) {
                     if (data) {
-                        window.open('', '_blank');
+                        // window.location.
                         alert('提交成功');
                     } else {
                         alert('failed');

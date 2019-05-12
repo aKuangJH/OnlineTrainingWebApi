@@ -1,5 +1,6 @@
 (
     function(){
+        let param = {"tid":19};
         $.ajax({
             type: 'post',
             url: 'http://train.online.com/server/question/showallquestions',
@@ -63,9 +64,6 @@
                                     $('.type').innertext = `[填空题]`;
                                     Awrap.innerHTML = `<span>你的回答：</span>
                                     <input type="text" id='blank_${data.questionlist[i].qid}' class="blankanswer"/>`
-                                    //存入cache
-                                    cache.tid = GetQueryString("tid");
-
                                 }
                                 U.append(oLi, q);
                                 U.append(oLi, Awrap);
@@ -77,7 +75,7 @@
                         // 第二次调用接口
                         $.ajax({
                             type: 'post',
-                            url: 'http://train.online.com/server/answer/gettestanswer?tid=15&aid=30&gid=5',
+                            url: 'http://train.online.com/server/answer/gettestanswer?tid=19&aid=34&gid=10',
                             dataType: 'json',
                             error: function(XmlHttpRequest, textStatus, errorThrown) {
                                 console.log("操作失败!");

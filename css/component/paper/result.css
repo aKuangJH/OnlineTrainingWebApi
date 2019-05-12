@@ -1,0 +1,36 @@
+.questionitem {
+    width: 55%;
+    height: auto;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px #bbbbbb;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+.qtitle {
+    /* border: 1px solid #000; */
+    width: auto;
+    height: auto;
+    padding-left: 60px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.qtitle p {
+    font-size: 14px;
+}
+.collectoption {
+    width: auto;
+    height: 25px;
+    /* border: 1px solid #000; */
+}
+#col {
+    float: right;
+}
+#qb {
+    /* background-color: #66DD00; */
+}
+#qa {
+    /* background-color: #FF3333; */
+}
