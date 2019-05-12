@@ -32,6 +32,7 @@ $(function () {
     $(".navmenu").mouseout(function () {
         $(this).children("ul").hide();
     })
+
 })
 
 // function addanswer(){
@@ -58,3 +59,11 @@ $(function () {
 //         }
 //     })
 // }
+
+function junpindex(){
+    alert("haha")
+    let role = get_cookie("role");
+    if(role == 0){
+        window.location.href = "http://train.online.com/html/main/index/index.html";
+    }
+}
