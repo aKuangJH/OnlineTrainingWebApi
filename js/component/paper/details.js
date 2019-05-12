@@ -92,12 +92,11 @@
 
                         break;
                     case 1:
-                        layer.msg('更新失败，请重新获取！');
-                        break;
+                      layer.msg('更新失败，请重新获取！');
+                      break;
                 }
-            }
-        });
-        $('.yes').click(function () {
+          }});
+        $('.yes').click(function(){
             $('.alertwrap').css({
                 display: 'block'
             });
@@ -137,10 +136,10 @@
                 var span = $(this).children('.answer').children('span');
 
                 if(a.length!=0){
-                    a.each(function(i,ele){
+                    a.each(function(){
+                        console.log($(this).find('pre').css('color'));
                         if($(this).find('pre').css('color')=="rgb(37, 187, 155)"){
                             //选择
-                            console.log("答案"+i+$(this).find('pre').siblings('input').attr("name"));
                             answerArr.push($(this).find('pre').siblings('input').attr("name").slice(-1));
                         }
                     })
