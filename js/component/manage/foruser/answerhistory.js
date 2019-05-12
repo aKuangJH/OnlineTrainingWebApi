@@ -43,10 +43,10 @@ function getanswerhistory(pageNo,pageSize){
                         "<td><button class='layui-btn layui-btn-sm' onclick='showmeanswer("+data.gradelist[i].tid+","+data.gradelist[i].aid+","+data.gradelist[i].gid+")'>查看答案</button></td>"+
                     "</tr>")
                     }
-                    layer.msg("获取成功！");
+                    // layer.msg("获取成功！");
                     break;
                 case 1:
-                    layer.msg('获取失败，请重新操作！');
+                    // layer.msg('获取失败，请重新操作！');
                     break;
             };
         }

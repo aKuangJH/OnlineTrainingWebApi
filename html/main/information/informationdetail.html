@@ -41,6 +41,7 @@
             </div>
         </div>
     </div>
+    <div class="options"></div>
     <div class="contentpart"></div>
     <div class="comments"></div>
 
@@ -49,9 +50,9 @@
     <script src="../../../js/common/common.js"></script>
 
     <script>
-        // $.get("../../component/top.html", function (data) {
-        //     $(".headpart").html(data);
-        // });
+        $.get("../../component/information/backandcollect.html", function (data) {
+            $(".options").html(data);
+        });
         $.get("../../component/information/infodetail.html", function (data) {
             $(".contentpart").html(data);
         });
