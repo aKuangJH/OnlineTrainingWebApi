@@ -82,3 +82,11 @@ function transformObjToArr(obj){
 	}
 	return arr;
 }
+
+function junpindex(){
+    alert("haha")
+    let role = get_cookie("role");
+    if(role == 0){
+        window.location.href = "http://train.online.com/html/main/index/index.html";
+    }
+}

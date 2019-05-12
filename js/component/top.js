@@ -59,7 +59,6 @@ $(function () {
 //         }
 //     })
 // }
-
 function junpindex(){
     alert("haha")
     let role = get_cookie("role");
