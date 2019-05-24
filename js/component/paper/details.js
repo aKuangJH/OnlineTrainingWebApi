@@ -167,6 +167,9 @@
                     if (data) {
                         // window.location.
                         alert('提交成功');
+                        setTimeout(() => {
+                            window.location.href = "http://train.online.com/html/main/paper/testgrade.html?tid="+tid;
+                        }, 500);
                     } else {
                         alert('failed');
                     }
